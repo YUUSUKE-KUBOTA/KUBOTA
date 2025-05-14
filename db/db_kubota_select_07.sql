@@ -5,5 +5,5 @@ SELECT
 FROM
     nmrm_rent_car
 WHERE
-        etc = 1
-    AND car_navigation = 1;
+        etc = '1'
+    AND car_navigation = '1';
