@@ -1,6 +1,6 @@
 /* ‰Û‘è‡C */
-/* Q.01 */
+/* Q.02 */
 DELETE FROM 
     nmrm_rent_car
 WHERE 
-    car_model_id = '000004';
+    0 = 0;
