@@ -1,9 +1,9 @@
 /* ‰Û‘è‡A */
 /* Q.08 */
 SELECT
-	car_management_no
+    car_management_no
 FROM
-	nmrm_rent_car
+    nmrm_rent_car
 WHERE
-		etc = '1' 
-	OR car_navigation = '1';
+        etc = '1' 
+    OR car_navigation = '1';
