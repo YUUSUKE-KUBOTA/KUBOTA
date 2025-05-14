@@ -1,3 +1,5 @@
+/* ‰Û‘è‡D */
+/* Q.01 */
 INSERT INTO 
 	nmrm_rent_car (	
 		car_management_no,
@@ -20,4 +22,6 @@ VALUES
 		'1',
 		'1',
 		'2',
-		)
+		'2025/5/14 14:00:00',
+		'000002',
+		'0');
