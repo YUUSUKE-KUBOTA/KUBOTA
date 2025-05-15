@@ -1,2 +1,3 @@
 /* ‰Û‘è‡I */
 /* Q.05 */
+SELECT CONVERT(VARCHAR, SYSDATETIME());
