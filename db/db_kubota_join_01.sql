@@ -1,3 +1,5 @@
+/* ‰Û‘è‡F */
+/* Q.01 */
 SELECT
     car_management_no,
     car_model_name

@@ -1,3 +1,5 @@
+/* ‰Û‘è‡F */
+/* Q.03 */
 SELECT
     car_model_name,
     shop_name

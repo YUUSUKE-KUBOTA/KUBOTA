@@ -1,4 +1,6 @@
-SELECT/**/
+/* ‰Û‘è‡F */
+/* Q.02 */
+SELECT
     nmrt_lending_status.car_management_no,
     car_model_name,
     return_plan_date
