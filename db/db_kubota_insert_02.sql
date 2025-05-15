@@ -1,15 +1,7 @@
 /* 課題⑤ */
 /* Q.02 */
-INSERT INTO nmrm_option (
-    option_id,
-    option_name,
-    option_price,
-    ins_date,
-    ins_user_id,
-    upd_counter,
-    upd_date,
-    upd_user_id
-)
+INSERT INTO 
+    nmrm_option
 VALUES (
     '0001',
 	'チャイルドシート',
