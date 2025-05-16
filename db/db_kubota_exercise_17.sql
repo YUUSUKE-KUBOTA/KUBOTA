@@ -1,6 +1,6 @@
 /* ’Ç‰Á‰‰K17 */
 SELECT
-    height + weight
+    height + weight AS sum,
     name,
     club
 FROM
