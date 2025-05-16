@@ -1,7 +1,9 @@
 /* ’Ç‰Á‰‰K6 */
 SELECT
+    id,
     name,
-	ranking
+    ranking,
+    group_name
 FROM
     countries
 WHERE

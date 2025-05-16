@@ -1,4 +1,4 @@
-/* ’Ç‰Á‰‰K5 */
+/* ’Ç‰Á‰‰K7 */
 SELECT
     id,
     country_id,
@@ -12,4 +12,4 @@ SELECT
 FROM
     players
 WHERE
-    height < 170;
+    position IN ('GK', 'DF', 'MF');
