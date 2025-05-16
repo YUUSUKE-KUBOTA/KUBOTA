@@ -1,4 +1,4 @@
-CREATE table nmrm_maker(
+CREATE TABLE nmrm_maker(
     maker_id char(4) not NULL primary key,
     maker_name varchar(20),
     ins_date datetime2,
