@@ -12,4 +12,4 @@ FROM
     INNER JOIN nmrm_car_model ON (nmrm_rent_car.car_model_id = nmrm_car_model.car_model_id)
 WHERE
         shop_name = '”LƒoƒXŽæˆµ“X'
-	AND nmrt_lending_status.car_management_no IS NULL;
+    AND nmrt_lending_status.car_management_no IS NULL;
