@@ -1,0 +1,7 @@
+/* í«â¡ââèK16 */
+SELECT DISTINCT
+    position
+FROM
+    players
+WHERE
+    0 = 0;
