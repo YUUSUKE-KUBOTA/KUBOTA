@@ -1,4 +1,4 @@
-/* ‰Û‘è‡F */
+/* ‰Û‘è‡J */
 /* Q.03 */
 SELECT
     model.car_model_name,

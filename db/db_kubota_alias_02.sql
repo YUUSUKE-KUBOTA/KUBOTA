@@ -1,4 +1,4 @@
-/* ‰Û‘è‡F */
+/* ‰Û‘è‡J */
 /* Q.02 */
 SELECT
     rent.car_management_no,

@@ -1,3 +1,5 @@
+/* ‰Û‘è‡K */
+/* Q.02 */
 CREATE TABLE nmrm_car_class(
     car_class_id char(4) not NULL primary key,
     car_class_name varchar(40) not NULL,
