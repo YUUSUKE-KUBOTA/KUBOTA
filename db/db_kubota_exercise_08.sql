@@ -2,7 +2,7 @@
 SELECT
     id,
     pairing_id,
-	goal_time
+    goal_time
 FROM
     goals
 WHERE

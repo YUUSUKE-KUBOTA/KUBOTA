@@ -8,7 +8,7 @@ SELECT
     club,
     birth,
     height,
-	weight
+    weight
 FROM
     players
 WHERE
