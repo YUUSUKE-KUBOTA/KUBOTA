@@ -1,0 +1,1 @@
+DROP TABLE nmrm_maker;

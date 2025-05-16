@@ -1,0 +1,1 @@
+DROP TABLE nmrm_car_class;
