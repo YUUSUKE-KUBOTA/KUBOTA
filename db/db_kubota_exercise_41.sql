@@ -1,11 +1,11 @@
 /* í«â¡ââèK41 */
 SELECT
     goals.goal_time,
-     (SELECT 
+     (SELECT
        name
-     FROM 
-       players 
-     WHERE 
+     FROM
+       players
+     WHERE
        goals.player_id = players.id
      ) AS player_name
 FROM
