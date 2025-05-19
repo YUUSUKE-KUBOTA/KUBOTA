@@ -13,5 +13,5 @@ FROM
     players
 WHERE
         height < 170
-	AND (position IN ('FW')
-	OR  position IN ('MF'));
+    AND (position IN ('FW')
+    OR  position IN ('MF'));
