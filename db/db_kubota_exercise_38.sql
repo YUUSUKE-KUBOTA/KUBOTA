@@ -1,6 +1,6 @@
 /* í«â¡ââèK38 */
 SELECT
-    COUNT(*) AS sum_goals
+    COUNT(goals.id) AS sum_goals
 FROM
     goals
 WHERE
