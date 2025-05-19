@@ -7,4 +7,4 @@ SELECT
 FROM
     countries
 WHERE
-    group_name = 'c';
+    group_name = 'C';
