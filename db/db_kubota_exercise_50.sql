@@ -1,12 +1,17 @@
 /* í«â¡ââèK50 */
 SELECT
-    (SELECT name FROM players WHERE players.id = goals.player_id) AS name,
-    COUNT(goals.player_id) AS sum_point
+    name,
+    (SELECT
+        COUNT(goals.id)
+     FROM
+        goals
+     WHERE
+        goals.player_id = players.id
+     GROUP BY
+        player_id) AS sum_point
 FROM
-    goals
+    players
 WHERE
-    goals.player_id IS NOT NULL
-GROUP BY
-    goals.player_id
+    0 = 0
 ORDER BY
     sum_point DESC;
