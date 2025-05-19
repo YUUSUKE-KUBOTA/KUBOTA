@@ -11,4 +11,4 @@ SELECT
 FROM
     goals
 WHERE
-    goals.player_id IS NOT NULL
+    goals.player_id IS NOT NULL;

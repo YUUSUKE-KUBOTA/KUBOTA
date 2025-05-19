@@ -6,4 +6,4 @@ FROM
     goals
     INNER JOIN players ON (goals.player_id = players.id)
 WHERE
-    goals.player_id IS NOT NULL
+    goals.player_id IS NOT NULL;
