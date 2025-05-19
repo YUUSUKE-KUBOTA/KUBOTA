@@ -2,8 +2,8 @@
 SELECT
     id,
     pairing_id,
-	player_id,
-	goal_time
+    player_id,
+    goal_time
 FROM
     goals
 WHERE
