@@ -1,0 +1,9 @@
+/* í«â¡ââèK57 */
+SELECT
+   (SELECT  FROM ) AS 'èü',
+   (SELECT  FROM )  AS 'ïâ'
+FROM
+    pairings
+WHERE
+       pairings.id = 103
+    OR pairings.id = 39;

@@ -5,4 +5,4 @@ SELECT
 FROM
     players
 WHERE
-    0 = 0
+    0 = 0;

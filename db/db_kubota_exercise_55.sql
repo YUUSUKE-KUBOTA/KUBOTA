@@ -1,19 +1,13 @@
 /* í«â¡ââèK55 */
 SELECT
     countries.group_name,
-    (SELECT 
-        COUNT(goals.id)
-    FROM
-        goals
-        INNER JOIN players ON (goals.player_id = players.id)
-        INNER JOIN pairings ON (countries.id = pairings.my_country_id)
-    WHERE 
-             players.country_id = countries.id
-        AND  pairings.kickoff BETWEEN '2014-06-13' AND '2014-06-27'
-    GROUP BY
-        goals
-     ) AS group_goals
+    COUNT(DISTINCT goals.goal_time) AS group_goals
 FROM
     countries
+    INNER JOIN pairings ON countries.id = pairings.my_country_id
+    INNER JOIN players ON players.country_id = countries.id
+    RIGHT OUTER JOIN goals ON goals.player_id = players.id
 WHERE
-    0 = 0
+    pairings.kickoff BETWEEN '2014-06-13' AND '2014-06-27'
+GROUP BY
+    countries.group_name;
