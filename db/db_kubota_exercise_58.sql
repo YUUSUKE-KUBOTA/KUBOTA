@@ -10,8 +10,7 @@ FROM
     pairings
     LEFT OUTER JOIN countries AS my_country ON (pairings.my_country_id = my_country.id)
     LEFT OUTER JOIN countries AS enemy_country ON (pairings.enemy_country_id = enemy_country.id)
-    LEFT OUTER JOIN players ON (my_country.id = players.country_id)
-    LEFT OUTER JOIN goals ON (players.id = goals.player_id AND goals.pairing_id = pairings.id)
+    LEFT OUTER JOIN goals ON (goals.pairing_id = pairings.id)
 WHERE
     my_country.group_name = 'C'
     AND enemy_country.group_name = 'C'
