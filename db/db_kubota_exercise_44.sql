@@ -7,4 +7,4 @@ SELECT
 FROM
     players
 WHERE
-    (SELECT AVG(height) FROM players) > height;
+    height < (SELECT AVG(height) FROM players);
