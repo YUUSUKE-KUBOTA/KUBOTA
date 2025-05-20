@@ -11,16 +11,14 @@ SELECT
         goals
         INNER JOIN players ON goals.player_id = players.id
      WHERE
-        players.country_id = my_country.id
-        AND goals.pairing_id = pairings.id) AS my_country_goals,
+        goals.pairing_id = pairings.id) AS my_country_goals,
     (SELECT
-        COUNT(goals.id) - COUNT(goals.pairing_id)
+        COUNT(goals.pairing_id)
      FROM
         goals
         INNER JOIN players ON goals.player_id = players.id
      WHERE
-        players.country_id = enemy_country.id
-        AND goals.pairing_id = pairings.id) AS enemy_country_goals
+        pairings.id = goals.pairing_id) AS enemy_country_goals
 FROM
     pairings
     INNER JOIN countries AS my_country ON pairings.my_country_id = my_country.id
