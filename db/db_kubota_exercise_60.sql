@@ -5,30 +5,30 @@ SELECT
     enemy_country.name AS enemy_country_name,
     my_country.ranking AS my_country_ranking,
     enemy_country.ranking AS enemy_country_ranking,
-	(SELECT 
-	    COUNT(goals.id) 
-	 FROM
-	    goals 
-	 WHERE
-	    goals.pairing_id = pairings.id AND goals.player_id IN
-	                            (SELECT 
-								   players.id 
-							     FROM 
-							       players 
-								 WHERE 
-								   players.country_id = pairings.my_country_id)) AS my_country_goals,
-     (SELECT 
-	    COUNT(goals.id) 
-	 FROM
-	    goals 
-	 WHERE
-	    goals.pairing_id = pairings.id AND goals.player_id IN
-	                            (SELECT 
-								   players.id 
-							     FROM 
-							       players 
-								 WHERE 
-								   players.country_id = pairings.enemy_country_id)) AS enemy_country_goals
+    (SELECT
+        COUNT(goals.id)
+     FROM
+        goals
+     WHERE
+        goals.player_id IN
+              (SELECT
+                  players.id
+               FROM
+                  players
+               WHERE
+                  players.country_id = pairings.my_country_id)) AS my_country_goals,
+     (SELECT
+        COUNT(goals.id)
+     FROM
+        goals
+     WHERE
+        goals.player_id IN
+              (SELECT
+                  players.id
+               FROM
+                  players
+               WHERE
+                  players.country_id = pairings.enemy_country_id)) AS enemy_country_goals
 FROM
     pairings
     INNER JOIN countries AS my_country ON (pairings.my_country_id = my_country.id)
