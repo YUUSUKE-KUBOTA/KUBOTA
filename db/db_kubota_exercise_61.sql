@@ -6,54 +6,38 @@ SELECT
     my_country.ranking AS my_country_ranking,
     enemy_country.ranking AS enemy_country_ranking,
     (SELECT
-        COUNT(goals.id) AS my_country_goal
+        COUNT(goals.pairing_id)
      FROM
         goals
+        INNER JOIN players ON goals.player_id = players.id
      WHERE
-        goals.player_id IN
-              (SELECT
-                  players.id
-               FROM
-                  players
-               WHERE
-                  players.country_id = pairings.my_country_id)) AS my_country_goals,
-     (SELECT
-        COUNT(goals.id) AS enemy_country_goal
+        players.country_id = my_country.id
+        AND goals.pairing_id = pairings.id) AS my_country_goals,
+    (SELECT
+        COUNT(goals.id) - COUNT(goals.pairing_id)
      FROM
         goals
+        INNER JOIN players ON goals.player_id = players.id
      WHERE
-        goals.player_id IN
-              (SELECT
-                  players.id
-               FROM
-                  players
-               WHERE
-                  players.country_id = pairings.enemy_country_id)) AS enemy_country_goals,
+        players.country_id = enemy_country.id
+        AND goals.pairing_id = pairings.id) AS enemy_country_goals,
     (SELECT (SELECT
-        COUNT(goals.id) AS my_country_goal
+        COUNT(goals.pairing_id)
      FROM
         goals
+        INNER JOIN players ON goals.player_id = players.id
      WHERE
-        goals.player_id IN
-              (SELECT
-                  players.id
-               FROM
-                  players
-               WHERE
-                  players.country_id = pairings.my_country_id))
+        players.country_id = my_country.id
+        AND goals.pairing_id = pairings.id)
     -
     (SELECT
-        COUNT(goals.id) AS enemy_country_goal
+        COUNT(goals.id) - COUNT(goals.pairing_id)
      FROM
         goals
+        INNER JOIN players ON goals.player_id = players.id
      WHERE
-        goals.player_id IN
-              (SELECT
-                  players.id
-               FROM
-                  players
-               WHERE
-                  players.country_id = pairings.enemy_country_id))) AS goal_difference
+        players.country_id = enemy_country.id
+        AND goals.pairing_id = pairings.id) AS enemy_country_goals) AS goal_difference
 FROM
     pairings
     INNER JOIN countries AS my_country ON (pairings.my_country_id = my_country.id)

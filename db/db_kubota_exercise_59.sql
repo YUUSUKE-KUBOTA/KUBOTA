@@ -11,8 +11,7 @@ SELECT
         goals
         INNER JOIN players ON goals.player_id = players.id
      WHERE
-        players.country_id = my_country.id
-        AND goals.pairing_id = pairings.id
+        goals.pairing_id = pairings.id
      ) AS my_country_goals
 FROM
     pairings
