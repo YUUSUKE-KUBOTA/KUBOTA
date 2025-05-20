@@ -10,13 +10,13 @@ SELECT
      FROM
         goals
      WHERE
-        goals.pairing_id = pairings.id AND goals.player_id IN
-                                (SELECT
-                                   players.id
-                                 FROM
-                                   players
-                                 WHERE
-                                   players.country_id = pairings.my_country_id)) AS my_country_goals
+        goals.player_id IN
+              (SELECT
+                  players.id
+               FROM
+                  players
+               WHERE
+                  players.country_id = pairings.my_country_id)) AS my_country_goals
 FROM
     pairings
     INNER JOIN countries AS my_country ON (pairings.my_country_id = my_country.id)
