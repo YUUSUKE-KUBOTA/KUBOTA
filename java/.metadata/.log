@@ -205,3 +205,60 @@ java.lang.InterruptedException
 	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:131)
 	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
 	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+!SESSION 2025-05-21 12:46:40.157 -----------------------------------------------
+eclipse.buildId=4.35.0.20250306-0811
+java.version=21.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.ui 2 0 2025-05-21 12:47:06.137
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-05-21 12:47:06.137
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2025-05-21 12:47:06.773
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-05-21 12:47:06.773
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 12:47:45.049
+!MESSAGE リソース '/Java_learning_Kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 12:47:45.052
+!MESSAGE リソース '/Java_learning_Kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2025-05-21 12:47:45.076
+!MESSAGE Failed to refresh Code Minings for editor.
+!STACK 1
+Java Model Exception: Error in Java Model (code 969): Java_learning_Kubota は存在しません
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:546)
+	at org.eclipse.jdt.internal.core.JavaModelManager.getPerProjectInfoCheckExistence(JavaModelManager.java:2549)
+	at org.eclipse.jdt.internal.core.JavaProject.getPerProjectInfo(JavaProject.java:2361)
+	at org.eclipse.jdt.internal.core.JavaProject.getRawClasspath(JavaProject.java:2404)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$9(STS4LanguageClientImpl.java:439)
+	at org.springframework.tooling.jdt.ls.commons.classpath.ReusableClasspathListenerHandler$CallbackJob.lambda$0(ReusableClasspathListenerHandler.java:76)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.tooling.jdt.ls.commons.classpath.ReusableClasspathListenerHandler$CallbackJob.run(ReusableClasspathListenerHandler.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2025-05-21 12:47:45.078
+!MESSAGE Java_learning_Kubota は存在しません
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 12:47:45.183
+!MESSAGE リソース '/Java_learning_Kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 12:47:45.191
+!MESSAGE リソース '/Java_learning_Kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 12:47:45.198
+!MESSAGE リソース '/Java_learning_Kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 12:47:45.203
+!MESSAGE リソース '/Java_learning_Kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 12:47:45.304
+!MESSAGE リソース '/Java_learning_Kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 12:47:45.310
+!MESSAGE リソース '/Java_learning_Kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
