@@ -302,3 +302,83 @@ Java Model Exception: Error in Java Model (code 969): Java_learning_kubota は�
 
 !ENTRY mergedoc.encoding 2 0 2025-05-21 13:15:28.998
 !MESSAGE リソース '/Java_learning_kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 13:18:01.900
+!MESSAGE リソース '/java_learning_kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 13:18:01.906
+!MESSAGE リソース '/java_learning_kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2025-05-21 13:18:01.919
+!MESSAGE Failed to refresh Code Minings for editor.
+!STACK 1
+Java Model Exception: Error in Java Model (code 969): java_learning_kubota は存在しません
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:546)
+	at org.eclipse.jdt.internal.core.JavaModelManager.getPerProjectInfoCheckExistence(JavaModelManager.java:2549)
+	at org.eclipse.jdt.internal.core.JavaProject.getPerProjectInfo(JavaProject.java:2361)
+	at org.eclipse.jdt.internal.core.JavaProject.getRawClasspath(JavaProject.java:2404)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$9(STS4LanguageClientImpl.java:439)
+	at org.springframework.tooling.jdt.ls.commons.classpath.ReusableClasspathListenerHandler$CallbackJob.lambda$0(ReusableClasspathListenerHandler.java:76)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.tooling.jdt.ls.commons.classpath.ReusableClasspathListenerHandler$CallbackJob.run(ReusableClasspathListenerHandler.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2025-05-21 13:18:01.919
+!MESSAGE java_learning_kubota は存在しません
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 13:18:01.975
+!MESSAGE リソース '/java_learning_kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 13:18:01.979
+!MESSAGE リソース '/java_learning_kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 13:18:01.983
+!MESSAGE リソース '/java_learning_kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 13:18:01.986
+!MESSAGE リソース '/java_learning_kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 13:18:02.061
+!MESSAGE リソース '/java_learning_kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 13:18:02.067
+!MESSAGE リソース '/java_learning_kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 13:18:21.632
+!MESSAGE リソース '/Java_learning_kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 13:18:21.640
+!MESSAGE リソース '/Java_learning_kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2025-05-21 13:18:21.662
+!MESSAGE Failed to refresh Code Minings for editor.
+!STACK 1
+Java Model Exception: Error in Java Model (code 969): Java_learning_kubota は存在しません
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:546)
+	at org.eclipse.jdt.internal.core.JavaModelManager.getPerProjectInfoCheckExistence(JavaModelManager.java:2549)
+	at org.eclipse.jdt.internal.core.JavaProject.getPerProjectInfo(JavaProject.java:2361)
+	at org.eclipse.jdt.internal.core.JavaProject.getRawClasspath(JavaProject.java:2404)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$9(STS4LanguageClientImpl.java:439)
+	at org.springframework.tooling.jdt.ls.commons.classpath.ReusableClasspathListenerHandler$CallbackJob.lambda$0(ReusableClasspathListenerHandler.java:76)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.tooling.jdt.ls.commons.classpath.ReusableClasspathListenerHandler$CallbackJob.run(ReusableClasspathListenerHandler.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2025-05-21 13:18:21.662
+!MESSAGE Java_learning_kubota は存在しません
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 13:18:21.722
+!MESSAGE リソース '/Java_learning_kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 13:18:21.725
+!MESSAGE リソース '/Java_learning_kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 13:18:21.729
+!MESSAGE リソース '/Java_learning_kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 13:18:21.732
+!MESSAGE リソース '/Java_learning_kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 13:18:21.810
+!MESSAGE リソース '/Java_learning_kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2025-05-21 13:18:21.813
+!MESSAGE リソース '/Java_learning_kubota/src/jp/co/scsk/kyushu/stringSample/Exercises02.java' が存在しません。
