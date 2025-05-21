@@ -1,4 +1,4 @@
-!SESSION 2025-05-20 17:13:52.860 -----------------------------------------------
+!SESSION 2025-05-21 10:07:13.282 -----------------------------------------------
 eclipse.buildId=4.35.0.20250306-0811
 java.version=21.0.6
 java.vendor=Eclipse Adoptium
@@ -6,19 +6,19 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
 Framework arguments:  -product org.eclipse.epp.package.java.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
 
-!ENTRY org.eclipse.ui 2 0 2025-05-20 17:15:01.593
+!ENTRY org.eclipse.ui 2 0 2025-05-21 10:07:52.512
 !MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
-!SUBENTRY 1 org.eclipse.ui 2 0 2025-05-20 17:15:01.593
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-05-21 10:07:52.512
 !MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
 
-!ENTRY org.eclipse.ui 2 0 2025-05-20 17:15:03.450
+!ENTRY org.eclipse.ui 2 0 2025-05-21 10:07:54.360
 !MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
-!SUBENTRY 1 org.eclipse.ui 2 0 2025-05-20 17:15:03.450
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-05-21 10:07:54.360
 !MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
 
-!ENTRY org.eclipse.core.resources 4 567 2025-05-20 17:15:09.072
+!ENTRY org.eclipse.core.resources 4 567 2025-05-21 10:07:55.502
 !MESSAGE ワークスペースは復元されましたが、問題が発生しました。
-!SUBENTRY 1 org.eclipse.core.resources 4 567 2025-05-20 17:15:09.072
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2025-05-21 10:07:55.502
 !MESSAGE '.org.eclipse.egit.core.cmp' のメタデータを読み取れませんでした。
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/.org.eclipse.egit.core.cmp)[567]: java.lang.Exception: '.org.eclipse.egit.core.cmp' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
@@ -85,7 +85,7 @@ org.eclipse.core.internal.resources.ResourceException(/.org.eclipse.egit.core.cm
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:670)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:607)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1492)
-!SUBENTRY 2 org.eclipse.core.resources 4 567 2025-05-20 17:15:09.081
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2025-05-21 10:07:55.504
 !MESSAGE '.org.eclipse.egit.core.cmp' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
 !STACK 0
 java.lang.Exception: '.org.eclipse.egit.core.cmp' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
@@ -152,211 +152,3 @@ java.lang.Exception: '.org.eclipse.egit.core.cmp' のプロジェクト記述フ
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:670)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:607)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1492)
-!SESSION 2025-05-20 17:21:26.259 -----------------------------------------------
-eclipse.buildId=4.35.0.20250306-0811
-java.version=21.0.6
-java.vendor=Eclipse Adoptium
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
-
-!ENTRY org.eclipse.ui 2 0 2025-05-20 17:23:48.002
-!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
-!SUBENTRY 1 org.eclipse.ui 2 0 2025-05-20 17:23:48.002
-!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
-
-!ENTRY org.eclipse.ui 2 0 2025-05-20 17:23:49.482
-!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
-!SUBENTRY 1 org.eclipse.ui 2 0 2025-05-20 17:23:49.484
-!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
-!SESSION 2025-05-21 08:52:52.113 -----------------------------------------------
-eclipse.buildId=4.35.0.20250306-0811
-java.version=21.0.6
-java.vendor=Eclipse Adoptium
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
-
-!ENTRY org.eclipse.ui 2 0 2025-05-21 08:54:23.330
-!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
-!SUBENTRY 1 org.eclipse.ui 2 0 2025-05-21 08:54:23.330
-!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
-
-!ENTRY org.eclipse.ui 2 0 2025-05-21 08:54:25.291
-!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
-!SUBENTRY 1 org.eclipse.ui 2 0 2025-05-21 08:54:25.291
-!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2025-05-21 09:02:39.305
-!MESSAGE Cannot invoke "org.eclipse.jdt.core.IClasspathEntry.getPath()" because the return value of "org.springframework.tooling.jdt.ls.commons.classpath.ClasspathUtil.getJreContainer(org.eclipse.jdt.core.IClasspathEntry[])" is null
-!STACK 0
-java.lang.NullPointerException: Cannot invoke "org.eclipse.jdt.core.IClasspathEntry.getPath()" because the return value of "org.springframework.tooling.jdt.ls.commons.classpath.ClasspathUtil.getJreContainer(org.eclipse.jdt.core.IClasspathEntry[])" is null
-	at org.springframework.tooling.jdt.ls.commons.classpath.ClasspathUtil.resolve(ClasspathUtil.java:98)
-	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.run(SendClasspathNotificationsJob.java:130)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-
-!ENTRY mergedoc.encoding 2 0 2025-05-21 09:02:39.312
-!MESSAGE リソース '/kubota_Exercises/Exercises01.java' が存在しません。
-
-!ENTRY mergedoc.encoding 2 0 2025-05-21 09:02:39.320
-!MESSAGE リソース '/kubota_Exercises/Exercises01.java' が存在しません。
-
-!ENTRY org.eclipse.core.resources 4 1 2025-05-21 09:02:39.467
-!MESSAGE ローカル変更のリフレッシュ中に問題が発生しました
-!SUBENTRY 1 org.eclipse.core.resources 4 1 2025-05-21 09:02:39.467
-!MESSAGE ローカル変更のリフレッシュ中に問題が発生しました
-!STACK 1
-org.eclipse.core.internal.resources.ResourceException: ローカルのファイル・システムでリソースをリフレッシュ中にエラーが発生しました。
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refreshResource(FileSystemResourceManager.java:1043)
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refresh(FileSystemResourceManager.java:1023)
-	at org.eclipse.core.internal.resources.Resource.refreshLocal(Resource.java:1601)
-	at org.eclipse.core.internal.refresh.RefreshJob.runInWorkspace(RefreshJob.java:227)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-Contains: 'kubota_Exercises' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
-java.lang.Exception: 'kubota_Exercises' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
-	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
-	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:970)
-	at org.eclipse.core.internal.resources.Project.updateDescription(Project.java:1429)
-	at org.eclipse.core.internal.resources.File.updateMetadataFiles(File.java:562)
-	at org.eclipse.core.internal.localstore.RefreshLocalVisitor.visit(RefreshLocalVisitor.java:306)
-	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:126)
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refreshResource(FileSystemResourceManager.java:1040)
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refresh(FileSystemResourceManager.java:1023)
-	at org.eclipse.core.internal.resources.Resource.refreshLocal(Resource.java:1601)
-	at org.eclipse.core.internal.refresh.RefreshJob.runInWorkspace(RefreshJob.java:227)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-!SUBENTRY 2 org.eclipse.core.resources 4 271 2025-05-21 09:02:39.470
-!MESSAGE ローカルのファイル・システムでリソースをリフレッシュ中にエラーが発生しました。
-!SUBENTRY 3 org.eclipse.core.resources 4 567 2025-05-21 09:02:39.470
-!MESSAGE 'kubota_Exercises' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
-!STACK 0
-java.lang.Exception: 'kubota_Exercises' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
-	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
-	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:970)
-	at org.eclipse.core.internal.resources.Project.updateDescription(Project.java:1429)
-	at org.eclipse.core.internal.resources.File.updateMetadataFiles(File.java:562)
-	at org.eclipse.core.internal.localstore.RefreshLocalVisitor.visit(RefreshLocalVisitor.java:306)
-	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:126)
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refreshResource(FileSystemResourceManager.java:1040)
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refresh(FileSystemResourceManager.java:1023)
-	at org.eclipse.core.internal.resources.Resource.refreshLocal(Resource.java:1601)
-	at org.eclipse.core.internal.refresh.RefreshJob.runInWorkspace(RefreshJob.java:227)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-
-!ENTRY org.eclipse.core.resources 4 1 2025-05-21 09:03:22.581
-!MESSAGE ローカル変更のリフレッシュ中に問題が発生しました
-!SUBENTRY 1 org.eclipse.core.resources 4 1 2025-05-21 09:03:22.581
-!MESSAGE ローカル変更のリフレッシュ中に問題が発生しました
-!STACK 1
-org.eclipse.core.internal.resources.ResourceException: ローカルのファイル・システムでリソースをリフレッシュ中にエラーが発生しました。
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refreshResource(FileSystemResourceManager.java:1043)
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refresh(FileSystemResourceManager.java:1023)
-	at org.eclipse.core.internal.resources.Resource.refreshLocal(Resource.java:1601)
-	at org.eclipse.core.internal.refresh.RefreshJob.runInWorkspace(RefreshJob.java:227)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-Contains: 'サーバー' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
-java.lang.Exception: 'サーバー' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
-	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
-	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:970)
-	at org.eclipse.core.internal.resources.Project.updateDescription(Project.java:1429)
-	at org.eclipse.core.internal.resources.File.updateMetadataFiles(File.java:562)
-	at org.eclipse.core.internal.localstore.RefreshLocalVisitor.visit(RefreshLocalVisitor.java:306)
-	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:126)
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refreshResource(FileSystemResourceManager.java:1040)
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refresh(FileSystemResourceManager.java:1023)
-	at org.eclipse.core.internal.resources.Resource.refreshLocal(Resource.java:1601)
-	at org.eclipse.core.internal.refresh.RefreshJob.runInWorkspace(RefreshJob.java:227)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-!SUBENTRY 2 org.eclipse.core.resources 4 271 2025-05-21 09:03:22.581
-!MESSAGE ローカルのファイル・システムでリソースをリフレッシュ中にエラーが発生しました。
-!SUBENTRY 3 org.eclipse.core.resources 4 567 2025-05-21 09:03:22.581
-!MESSAGE 'サーバー' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
-!STACK 0
-java.lang.Exception: 'サーバー' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
-	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
-	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:970)
-	at org.eclipse.core.internal.resources.Project.updateDescription(Project.java:1429)
-	at org.eclipse.core.internal.resources.File.updateMetadataFiles(File.java:562)
-	at org.eclipse.core.internal.localstore.RefreshLocalVisitor.visit(RefreshLocalVisitor.java:306)
-	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:126)
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refreshResource(FileSystemResourceManager.java:1040)
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refresh(FileSystemResourceManager.java:1023)
-	at org.eclipse.core.internal.resources.Resource.refreshLocal(Resource.java:1601)
-	at org.eclipse.core.internal.refresh.RefreshJob.runInWorkspace(RefreshJob.java:227)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2025-05-21 09:03:25.650
-!MESSAGE Cannot invoke "org.eclipse.jdt.core.IClasspathEntry.getPath()" because the return value of "org.springframework.tooling.jdt.ls.commons.classpath.ClasspathUtil.getJreContainer(org.eclipse.jdt.core.IClasspathEntry[])" is null
-!STACK 0
-java.lang.NullPointerException: Cannot invoke "org.eclipse.jdt.core.IClasspathEntry.getPath()" because the return value of "org.springframework.tooling.jdt.ls.commons.classpath.ClasspathUtil.getJreContainer(org.eclipse.jdt.core.IClasspathEntry[])" is null
-	at org.springframework.tooling.jdt.ls.commons.classpath.ClasspathUtil.resolve(ClasspathUtil.java:98)
-	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.run(SendClasspathNotificationsJob.java:130)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-
-!ENTRY org.eclipse.core.resources 4 1 2025-05-21 09:03:25.669
-!MESSAGE ローカル変更のリフレッシュ中に問題が発生しました
-!SUBENTRY 1 org.eclipse.core.resources 4 1 2025-05-21 09:03:25.669
-!MESSAGE ローカル変更のリフレッシュ中に問題が発生しました
-!STACK 1
-org.eclipse.core.internal.resources.ResourceException: ローカルのファイル・システムでリソースをリフレッシュ中にエラーが発生しました。
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refreshResource(FileSystemResourceManager.java:1043)
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refresh(FileSystemResourceManager.java:1023)
-	at org.eclipse.core.internal.resources.Resource.refreshLocal(Resource.java:1601)
-	at org.eclipse.core.internal.refresh.RefreshJob.runInWorkspace(RefreshJob.java:227)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-Contains: 'Java2025_kubota' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
-java.lang.Exception: 'Java2025_kubota' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
-	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
-	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:970)
-	at org.eclipse.core.internal.resources.Project.updateDescription(Project.java:1429)
-	at org.eclipse.core.internal.resources.File.updateMetadataFiles(File.java:562)
-	at org.eclipse.core.internal.localstore.RefreshLocalVisitor.visit(RefreshLocalVisitor.java:306)
-	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:126)
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refreshResource(FileSystemResourceManager.java:1040)
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refresh(FileSystemResourceManager.java:1023)
-	at org.eclipse.core.internal.resources.Resource.refreshLocal(Resource.java:1601)
-	at org.eclipse.core.internal.refresh.RefreshJob.runInWorkspace(RefreshJob.java:227)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-!SUBENTRY 2 org.eclipse.core.resources 4 271 2025-05-21 09:03:25.669
-!MESSAGE ローカルのファイル・システムでリソースをリフレッシュ中にエラーが発生しました。
-!SUBENTRY 3 org.eclipse.core.resources 4 567 2025-05-21 09:03:25.669
-!MESSAGE 'Java2025_kubota' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
-!STACK 0
-java.lang.Exception: 'Java2025_kubota' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
-	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
-	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:970)
-	at org.eclipse.core.internal.resources.Project.updateDescription(Project.java:1429)
-	at org.eclipse.core.internal.resources.File.updateMetadataFiles(File.java:562)
-	at org.eclipse.core.internal.localstore.RefreshLocalVisitor.visit(RefreshLocalVisitor.java:306)
-	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:126)
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refreshResource(FileSystemResourceManager.java:1040)
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refresh(FileSystemResourceManager.java:1023)
-	at org.eclipse.core.internal.resources.Resource.refreshLocal(Resource.java:1601)
-	at org.eclipse.core.internal.refresh.RefreshJob.runInWorkspace(RefreshJob.java:227)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-
-!ENTRY org.eclipse.ui.ide 4 4 2025-05-21 09:04:22.683
-!MESSAGE ワークスペースの保存の問題
-
-!ENTRY org.eclipse.ui.ide 2 1 2025-05-21 09:04:22.687
-!MESSAGE ワークベンチの状態を保存中に問題が発生しました。
-!SUBENTRY 1 org.eclipse.core.resources 2 234 2025-05-21 09:04:22.688
-!MESSAGE 'kubota_Exercises' のプロジェクト記述ファイル (.project) がありませんでした。 このファイルには、プロジェクトに関する重要な情報が含まれています。 新しいプロジェクト記述ファイルが作成されましたが、プロジェクトに関する情報の一部が破損している可能性があります。
-
-!ENTRY org.eclipse.core.resources 2 10035 2025-05-21 09:04:24.707
-!MESSAGE ワークスペースは、このセッションで変更が保存されずに終了します。
