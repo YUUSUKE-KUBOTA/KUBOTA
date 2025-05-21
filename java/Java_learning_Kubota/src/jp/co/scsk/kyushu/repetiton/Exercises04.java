@@ -4,11 +4,14 @@ public class Exercises04 {
 	
 	public static void main(String[] args) {
 		int x = 100;
-		for (int n = 20; n >0; n++) {
-			x = x - n;
-			System.out.println(x);
+		int y = 20;
+		int n;
+		while (x >= 0) {
+			x -= y;
+			y--;
 		}
-		System.out.println(x);
+		n = y + 1;
+		System.out.println("100 - 20 - 19 - 18 - ... - " + n + " < 0");
 	}
 	
 }
