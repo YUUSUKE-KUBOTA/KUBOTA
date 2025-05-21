@@ -6,6 +6,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/kazuk/OneDrive/business/teto-sol/SCSK九州/2024.04-06_新入社員研修/10.教材/15_Java応用/mssql-jdbc-12.6.2.jre11.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
