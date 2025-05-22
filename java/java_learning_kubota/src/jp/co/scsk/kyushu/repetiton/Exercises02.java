@@ -3,13 +3,15 @@ package jp.co.scsk.kyushu.repetiton;
 public class Exercises02 {
 
 	public static void main(String[] args) {
-		int x = 2;
+		int result = 1;
+		int base = 2;
+		int exponent = 7;
 		int i = 0;
-		while(i < 6) {
-			x = x * 2;
-			i = i + 1;
+		while (i < exponent) {
+			result *= base;
+			i++;
 		}
-		System.out.println(x);
+		System.out.println(result);
 	}
 
 }

@@ -1,9 +1,10 @@
 package jp.co.scsk.kyushu.conditionalBranch;
 
 public class Exercises04 {
-	
+
 	public static void main(String[] args) {
 		int num = 2;
+
 		if (num == 1) {
 			System.out.println("おはよう");
 		} else if (num == 2) {

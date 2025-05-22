@@ -1,13 +1,14 @@
 package jp.co.scsk.kyushu.conditionalBranch;
 
 public class Exercises02 {
+	//private static final int ADULT_PRAICE;
 	
 	public static void main(String[] args) {
 		int age = 10;
 		int fee;
-		if (age >= 0 || age <=2) {
+		if (age <= 2) {
 			fee = 0;
-		} else if (age >= 3 && age <=12) {
+		} else if (age <= 12) {
 			fee = 4000;
 		} else {
 			fee = 8000;

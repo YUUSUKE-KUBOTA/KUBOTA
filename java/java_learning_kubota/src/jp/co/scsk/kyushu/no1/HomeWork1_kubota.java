@@ -6,7 +6,7 @@ import jp.co.scsk.kyushu.model.Score;
 import jp.co.scsk.kyushu.util.Scores;
 import jp.co.scsk.kyushu.util.Students;
 
-public class HomeWork1 {
+public class HomeWork1_kubota {
 
 	public static void main(String[] args) {
 		// オブジェクト型での平均点計算
