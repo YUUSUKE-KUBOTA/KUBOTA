@@ -5,19 +5,26 @@ import java.util.HashMap;
 public class GradesData01 {
 
 	public static void main(String[] args) {
+		int sum = 0;
+		int count = 0;
+		int ave = 0;
+
 		HashMap<String, Integer> studentScores = new HashMap<>();
-		studentScores.put("一郎", Integer.valueOf(100));
-		studentScores.put("次郎", Integer.valueOf(90));
-		studentScores.put("三郎", Integer.valueOf(86));
-		studentScores.put("四郎", Integer.valueOf(75));
-		studentScores.put("五郎", Integer.valueOf(98));
-		studentScores.put("七郎", Integer.valueOf(60));
-		studentScores.put("六郎", Integer.valueOf(49));
-		studentScores.put("八郎", Integer.valueOf(84));
-		studentScores.put("九郎", Integer.valueOf(76));
-		studentScores.put("九郎", Integer.valueOf(80));
-		for(String key:studentScores.keySet()) {
-			System.out.println(studentScores.values());
+		Data01 data01 = new Data01();
+		String[] names = data01.getNames();
+		int[] points = data01.getPoints();
+
+		for (int i = 0; i < names.length; i++) {
+			studentScores.put(names[i], points[i]);
 		}
+
+		for (int score : studentScores.values()) {
+			sum += score;
+			count++;
+		}
+		ave = sum / count;
+
+		System.out.println("Total sum of scores: " + sum);
+		System.out.println("Total ave of scores: " + ave);
 	}
 }
