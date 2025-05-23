@@ -21,7 +21,7 @@ public class GradesData02 {
 				studentScore.put(names[i], points[i]);
 			}
 		}
-
+		
 		ArrayList<String> mapKeys = new ArrayList<>(studentScore.keySet());
 		for (int i = 0; i < mapKeys.size() - 1; i++) {
 			for (int j = 0; j < mapKeys.size() - 1 - i; j++) {
