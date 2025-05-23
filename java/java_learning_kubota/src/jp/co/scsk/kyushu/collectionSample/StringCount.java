@@ -19,7 +19,7 @@ public class StringCount {
 		}
 
 		for (String charStr : countStr.keySet()) {
-			System.out.println(charStr + ":" + countStr.get(charStr));
+			System.out.println(charStr + ":" + countStr.get(charStr) + "個分入力");
 		}
 	}
 }
