@@ -12,14 +12,18 @@ public class GradesData03 {
 		int[] points = data02.getPoints();
 
 		for (int i = 0; i < names.length; i++) {
+//			if (!studentScore.containsKey(names[i])) {
+//				ArrayList<Integer> score = new ArrayList<>();
+//				score.add(points[i]);
+//				studentScore.put(names[i], score);
+//			} else {
+//				ArrayList<Integer> score = studentScore.get(names[i]);
+//				score.add(points[i]);
+//			}
 			if (!studentScore.containsKey(names[i])) {
-				ArrayList<Integer> score = new ArrayList<>();
-				score.add(points[i]);
-				studentScore.put(names[i], score);
-			} else {
-				ArrayList<Integer> score = studentScore.get(names[i]);
-				score.add(points[i]);
+				studentScore.put(names[i],  new ArrayList<>());
 			}
+			studentScore.get(names[i]).add(points[i]);
 		}
 
 		for (String name : studentScore.keySet()) {
