@@ -3,7 +3,7 @@ package jp.co.scsk.kyushu.etc;
 public class Exercise01 {
 
 	public static double getValue(int age) {
-		double fee = 2000;
+		double fee = 1000;
 		if (age < 6 || age > 100) {
 			fee = 0;
 		} else if (age > 60) {
