@@ -9,7 +9,7 @@ public class Exercise02 {
 		System.out.println(arrayAvg);
 	}
 
-	public static int[] create(int arraylong) {
+	private static int[] create(int arraylong) {
 		int[] array;
 		array = new int[arraylong];
 		for (int i = 0; i < arraylong; i++) {
@@ -18,7 +18,7 @@ public class Exercise02 {
 		return array;
 	}
 
-	public static double getAvg(int array[]) {
+	private static double getAvg(int array[]) {
 		double arrayAvg = 0;
 		for (int i = 0; i < array.length; i++) {
 			arrayAvg += array[i];
