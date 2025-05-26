@@ -6,19 +6,16 @@ public class Exercises01 {
 
 	public static void main(String[] args) {
 		ArrayList<String> inputs = InputUtil.input();
-		if (inputs != null && inputs.size() == 2) {
-			String str1 = inputs.get(0);
-			String str2 = inputs.get(1);
-			try {
-				System.out.println(div(str1, str2));
-			} catch (NumberFormatException e) {
-				System.out.println("数字ではありません");
-			} catch (NullPointerException e) {
-				System.out.println("値が指定されていません");
-			}
-		} else {
-			System.out.println("入力の取得に失敗しました");
+		String str1 = inputs.get(0);
+		String str2 = inputs.get(1);
+		try {
+			System.out.println(div(str1, str2));
+		} catch (NumberFormatException e) {
+			System.out.println("数字ではありません");
+		} catch (NullPointerException e) {
+			System.out.println("値が指定されていません");
 		}
+
 	}
 
 	public static String div(String str1, String str2) {
