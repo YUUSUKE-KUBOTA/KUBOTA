@@ -6,16 +6,14 @@ public class Exercises01 {
 
 	public static void main(String[] args) {
 		ArrayList<String> inputs = InputUtil.input();
-		String str1 = inputs.get(0);
-		String str2 = inputs.get(1);
+
 		try {
-			System.out.println(div(str1, str2));
+			System.out.println(div(inputs.get(0), inputs.get(1)));
 		} catch (NumberFormatException e) {
 			System.out.println("数字ではありません");
 		} catch (NullPointerException e) {
 			System.out.println("値が指定されていません");
 		}
-
 	}
 
 	public static String div(String str1, String str2) {
