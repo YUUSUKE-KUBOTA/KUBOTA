@@ -21,22 +21,36 @@ public class HomeWork1_kubota {
 	}
 
 	private static HashMap<String, Score> reviseJapaneseScore1(HashMap<String, Score> map) {
-		// TODO このメソッドを修正
-		return null;
+		for (Score score : map.values()) {
+			score.setJapanese(score.getJapanese() + 5);
+		}
+		return map;
 	}
 
 	private static double getJapaneseAveragePoint1(HashMap<String, Score> map) {
-		// TODO このメソッドを修正
-		return 0.0;
+		int sum = 0;
+		double ave = 0;
+		for (String name : map.keySet()) {
+			sum += map.get(name).getJapanese();
+		}
+		ave = (double)sum / map.keySet().size();
+		return ave;
 	}
 
-	private static int[] reviseJapaneseScore2(int[]  array) {
-		// TODO このメソッドを修正
-		return null;
+	private static int[] reviseJapaneseScore2(int[] array) {
+		for (int index = 0; index < array.length; index++) {
+			array[index] += 5;
+		}
+		return array;
 	}
 
 	private static double getJapaneseAveragePoint2(int[] array) {
-		// TODO このメソッドを修正
-		return 0.0;
+		int sum = 0;
+		double ave = 0;
+		for (int score : array) {
+			sum += score;
+		}
+		ave = (double)sum / array.length;
+		return ave;
 	}
 }

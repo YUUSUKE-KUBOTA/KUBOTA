@@ -1,6 +1,8 @@
 package jp.co.scsk.kyushu.no1;
 
-public class HomeWork5 {
+import java.util.regex.Pattern;
+
+public class HomeWork5_kubota {
 
 	public static void main(String[] args) {
 		System.out.println("--- ① ---");
@@ -44,27 +46,32 @@ public class HomeWork5 {
 	}
 
 	private static boolean isStartA(String targetStr) {
-		// TODO 先頭が「A」もしくは「a」から始まる文字列かを判定する処理を記述
-		return true;
+		// 先頭が「A」もしくは「a」から始まる文字列かを判定する処理を記述
+		return Pattern.compile("^(a|A)").matcher(targetStr).find();
 	}
 
 	private static boolean istelephoneFormat(String targetStr) {
-		// TODO 日本国内の電話番号の書式かどうか（ハイフン含む）
-		return true;
+		// 日本国内の電話番号の書式かどうか（ハイフン含む）
+		return Pattern.compile("^.{12,13}$").matcher(targetStr).find()
+				&& Pattern.compile("^[0-9]+-[0-9]+-[0-9]+$").matcher(targetStr).find();
 	}
 
 	private static boolean isMailAddressFormat(String targetStr) {
-		// TODO メールアドレスの書式かどうか
-		return true;
+		// メールアドレスの書式かどうか
+		return Pattern.compile("^\\w+@[\\w\\.]+\\.\\w+").matcher(targetStr).find();
 	}
 
 	private static boolean isPassword(String targetStr) {
-		// TODO 半角数字、半角小文字、半角大文字の全てを含む文字列
-		return true;
+		// 半角数字、半角小文字、半角大文字の全てを含む文字列
+		return Pattern.compile("^.{8,}$").matcher(targetStr).find()
+				&& Pattern.compile("[0-9]+").matcher(targetStr).find()
+				&& Pattern.compile("[a-z]+").matcher(targetStr).find()
+				&& Pattern.compile("[A-Z]+").matcher(targetStr).find();
 	}
 
 	private static boolean isNumericOrHalfsmallAlphabet(String targetStr) {
-		// TODO 半角数字と半角小文字しか含まない文字列
-		return true;
+		// 半角数字と半角小文字しか含まない文字列
+		return Pattern.compile("^[0-9a-z]*$").matcher(targetStr).find();
 	}
 }
+

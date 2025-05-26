@@ -5,7 +5,7 @@ import java.util.HashMap;
 import jp.co.scsk.kyushu.model.Score;
 import jp.co.scsk.kyushu.util.Students;
 
-public class HomeWork2 {
+public class HomeWork2_kubota {
 
 	public static void main(String[] args) {
 		HashMap<String, Score> students1 = Students.createStudents();
@@ -23,13 +23,20 @@ public class HomeWork2 {
 			average.setEnglish(average.getEnglish() + score.getEnglish());
 		}
 		int peoples = map.keySet().size();
-		average.setJapanese((int)Math.ceil((double)average.getJapanese() / peoples));
-		average.setMath((int)Math.ceil((double)average.getMath() / peoples));
-		average.setEnglish((int)Math.ceil((double)average.getEnglish() / peoples));
+		average.setJapanese((int) Math.ceil((double) average.getJapanese() / peoples));
+		average.setMath((int) Math.ceil((double) average.getMath() / peoples));
+		average.setEnglish((int) Math.ceil((double) average.getEnglish() / peoples));
 
-		// TODO これ以降を修正
+		HashMap<String, Score> students2 = new HashMap<String, Score>();
+		for (String name : map.keySet()) {
+			Score score = map.get(name);
+			score.setJapanese(Math.max(0, average.getJapanese() - score.getJapanese()));
+			score.setMath(Math.max(0, average.getMath() - score.getMath()));
+			score.setEnglish(Math.max(0, average.getEnglish() - score.getEnglish()));
 
-		return null;
+			students2.put(name, score);
+		}
+		return students2;
 	}
 
 	private static void printScores(HashMap<String, Score> map) {
