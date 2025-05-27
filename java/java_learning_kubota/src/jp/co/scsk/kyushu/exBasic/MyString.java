@@ -41,6 +41,6 @@ public class MyString {
 	}
 
 	public String replace(String str) {
-
+		return str.replace(",", "	");
 	}
 }
