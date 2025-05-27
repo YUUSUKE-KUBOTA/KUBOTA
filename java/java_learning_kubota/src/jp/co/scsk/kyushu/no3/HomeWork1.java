@@ -5,10 +5,11 @@ import java.util.List;
 
 public class HomeWork1 {
 
-    public static void main(String[] args) {
-        List<String> strList = Arrays.asList("Apple", "Orange", "Lemon", "Grape", "Banana", "Peach");
-        strList.stream()
-            .map(str -> str.replaceAll("[Aa]", ""))
-            .forEach(str -> System.out.println(str.length()));
-    }
+	public static void main(String[] args) {
+		List<String> strList = Arrays.asList("Apple", "Orange", "Lemon", "Grape", "Banana", "Peach");
+		String pattern = "[Aa]";
+		strList.stream()
+			.map(str -> str.replaceAll(pattern, ""))
+			.forEach(str -> System.out.println(str.length()));
+	}
 }
