@@ -46,32 +46,27 @@ public class HomeWork5_kubota {
 	}
 
 	private static boolean isStartA(String targetStr) {
-		// 先頭が「A」もしくは「a」から始まる文字列かを判定する処理を記述
-		return Pattern.compile("^(a|A)").matcher(targetStr).find();
+		String pattern = "^[aA].*";
+		return Pattern.matches(pattern, targetStr);
 	}
 
 	private static boolean istelephoneFormat(String targetStr) {
-		// 日本国内の電話番号の書式かどうか（ハイフン含む）
-		return Pattern.compile("^.{12,13}$").matcher(targetStr).find()
-				&& Pattern.compile("^[0-9]+-[0-9]+-[0-9]+$").matcher(targetStr).find();
+		String pattern = "^0\\d{1,4}-\\d{1,4}-\\d{4}$";
+		return Pattern.matches(pattern, targetStr);
 	}
 
 	private static boolean isMailAddressFormat(String targetStr) {
-		// メールアドレスの書式かどうか
-		return Pattern.compile("^\\w+@[\\w\\.]+\\.\\w+").matcher(targetStr).find();
+		String pattern = "^[A-Za-z0-9_]+@[A-Za-z0-9_]+\\.[A-Za-z]{2,}$";
+		return Pattern.matches(pattern, targetStr);
 	}
 
 	private static boolean isPassword(String targetStr) {
-		// 半角数字、半角小文字、半角大文字の全てを含む文字列
-		return Pattern.compile("^.{8,}$").matcher(targetStr).find()
-				&& Pattern.compile("[0-9]+").matcher(targetStr).find()
-				&& Pattern.compile("[a-z]+").matcher(targetStr).find()
-				&& Pattern.compile("[A-Z]+").matcher(targetStr).find();
+		String pattern = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{8, }$";
+		return Pattern.matches(pattern, targetStr);
 	}
 
 	private static boolean isNumericOrHalfsmallAlphabet(String targetStr) {
-		// 半角数字と半角小文字しか含まない文字列
-		return Pattern.compile("^[0-9a-z]*$").matcher(targetStr).find();
+		String pattern = "^[0-9a-z]+$";
+		return Pattern.matches(pattern, targetStr);
 	}
 }
-

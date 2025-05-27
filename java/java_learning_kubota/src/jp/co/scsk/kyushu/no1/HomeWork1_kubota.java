@@ -11,20 +11,19 @@ public class HomeWork1_kubota {
 	public static void main(String[] args) {
 		// オブジェクト型での平均点計算
 		HashMap<String, Score> students = Students.createStudents();
-		students = reviseJapaneseScore1(students);
+		reviseJapaneseScore1(students);
 		System.out.println(getJapaneseAveragePoint1(students));
 
 		// プリミティブ型での平均点計算
 		int[] japaneseScores = Scores.getJapaneseScores();
-		japaneseScores = reviseJapaneseScore2(japaneseScores);
+		reviseJapaneseScore2(japaneseScores);
 		System.out.println(getJapaneseAveragePoint2(japaneseScores));
 	}
 
-	private static HashMap<String, Score> reviseJapaneseScore1(HashMap<String, Score> map) {
+	private static void reviseJapaneseScore1(HashMap<String, Score> map) {
 		for (Score score : map.values()) {
 			score.setJapanese(score.getJapanese() + 5);
 		}
-		return map;
 	}
 
 	private static double getJapaneseAveragePoint1(HashMap<String, Score> map) {
@@ -37,18 +36,17 @@ public class HomeWork1_kubota {
 		return ave;
 	}
 
-	private static int[] reviseJapaneseScore2(int[] array) {
-		for (int index = 0; index < array.length; index++) {
-			array[index] += 5;
+	private static void reviseJapaneseScore2(int[] array) {
+		for (int i = 0; i < array.length; i++) {
+			array[i] += 5;
 		}
-		return array;
 	}
 
 	private static double getJapaneseAveragePoint2(int[] array) {
 		int sum = 0;
 		double ave = 0;
-		for (int score : array) {
-			sum += score;
+		for (int i = 0; i < array.length; i++) {
+			sum += array[i];
 		}
 		ave = (double)sum / array.length;
 		return ave;

@@ -29,12 +29,12 @@ public class HomeWork2_kubota {
 
 		HashMap<String, Score> students2 = new HashMap<String, Score>();
 		for (String name : map.keySet()) {
-			Score score = map.get(name);
-			score.setJapanese(Math.max(0, average.getJapanese() - score.getJapanese()));
-			score.setMath(Math.max(0, average.getMath() - score.getMath()));
-			score.setEnglish(Math.max(0, average.getEnglish() - score.getEnglish()));
-
-			students2.put(name, score);
+			Score originalScore = map.get(name);
+			Score diffScore = new Score();
+			diffScore.setJapanese(Math.max(0, average.getJapanese() - originalScore.getJapanese()));
+			diffScore.setMath(Math.max(0, average.getMath() - originalScore.getMath()));
+			diffScore.setEnglish(Math.max(0, average.getEnglish() - originalScore.getEnglish()));
+			students2.put(name, diffScore);
 		}
 		return students2;
 	}
