@@ -22,6 +22,7 @@ public class MyList {
 		System.out.println(myList.getRomdomNumberDuplicationList(x));
 		System.out.println(myList.getRomdomNumberDuplicationList2(x));
 		System.out.println(myList.calcBMI(humanList));
+		myList.plusAge(humanList);
 	}
 
 	public List<Integer> getRomdomNumberList(int num) {
@@ -65,7 +66,8 @@ public class MyList {
 	public void plusAge(List<Human> humanList) {
 		for (Human Element : humanList) {
 			int age = Element.getAge();
-			System.out.println();
+			age += 1;
+			System.out.println(age);
 		}
 	}
 }
