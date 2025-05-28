@@ -9,11 +9,19 @@ public class MyList {
 	public static void main(String[] args) {
 		MyList myList = new MyList();
 		int x = 10;
-		ArrayList<Human> human = new ArrayList<>();
+		Sex sex1 = new Sex(Sex.MAN);
+		Blood blood1 = new Blood();
+		Human human1 = new Human(10, "k", sex1, blood1, 170.0, 50.0);
+		Sex sex2 = new Sex(Sex.MAN);
+		Blood blood2 = new Blood();
+		Human human2 = new Human(20, "y", sex2, blood2, 120.0, 20.0);
+		ArrayList<Human> humanList = new ArrayList<>();
+		humanList.add(human1);
+		humanList.add(human2);
 		System.out.println(myList.getRomdomNumberList(x));
 		System.out.println(myList.getRomdomNumberDuplicationList(x));
 		System.out.println(myList.getRomdomNumberDuplicationList2(x));
-		System.out.println(myList.calcBMI(human));
+		System.out.println(myList.calcBMI(humanList));
 	}
 
 	public List<Integer> getRomdomNumberList(int num) {
@@ -48,8 +56,8 @@ public class MyList {
 		for (Human Element : humanList) {
 			double height = Element.getHeight();
 			double weight = Element.getWeight();
-			double bmi = weight / (height * height);
-			bmiArray.add(bmi);
+			double bmi = weight / ((height / 100) * (height / 100));
+			bmiArray.add((Double) bmi);
 		}
 		return bmiArray;
 	}
