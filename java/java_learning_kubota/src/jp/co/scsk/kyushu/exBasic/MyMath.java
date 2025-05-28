@@ -151,4 +151,14 @@ public class MyMath {
 			return result - 1;
 		}
 	}
+	
+	public void round4(double num) {
+		num += 0.6;
+		int result = (int) num;
+	}
+	
+	public void round6(double num) {
+		num += 0.4;
+		int result = (int) num;
+	}
 }
