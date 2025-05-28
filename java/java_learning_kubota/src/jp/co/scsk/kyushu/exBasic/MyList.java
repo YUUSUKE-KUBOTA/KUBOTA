@@ -5,30 +5,39 @@ import java.util.HashSet;
 import java.util.List;
 
 public class MyList {
+	
+	public static void main(String[] args) {
+		MyList myList = new MyList();
+		int x = 10;
+		ArrayList<Human> human = new ArrayList<>();
+		System.out.println(myList.getRomdomNumberList(x));
+		System.out.println(myList.getRomdomNumberDuplicationList(x));
+		System.out.println(myList.getRomdomNumberDuplicationList2(x));
+		System.out.println(myList.calcBMI(human));
+	}
 
 	public List<Integer> getRomdomNumberList(int num) {
 		ArrayList<Integer> list = new ArrayList<>();
-		for (int i = 0; i >= num; i++) {
+		for (int i = 0; i < num; i++) {
 			list.add((int) (Math.random() * 101));
 		}
 		return list;
 	}
 
 	public List<Integer> getRomdomNumberDuplicationList(int num) {
-		ArrayList<Integer> list = new ArrayList<>();
-		for (int i = 0; i < num; i++) {
-			int num1 = -1;
-			while (list.contains(num1)) {
-				num1 = (int) (Math.random() * 101);
-			}
-			list.add(num1);
-		}
-		return list;
+		List<Integer> list = new ArrayList<>();
+	    while (list.size() < num) {
+	        int num1 = (int) (Math.random() * 101);
+	        if (!list.contains(num1)) {
+	            list.add(num1);
+	        }
+	    }
+	    return list;
 	}
 
 	public List<Integer> getRomdomNumberDuplicationList2(int num) {
 		HashSet<Integer> set = new HashSet<>();
-		for (int i = 0; i >= num; i++) {
+		for (int i = 0; i < num; i++) {
 			set.add((int) (Math.random() * 101));
 		}
 		return new ArrayList<>(set);
@@ -36,9 +45,9 @@ public class MyList {
 
 	public List<Double> calcBMI(List<Human> humanList) {
 		ArrayList<Double> bmiArray = new ArrayList<>();
-		for (Human people : humanList) {
-			double height = people.getHeight();
-			double weight = people.getWeight();
+		for (Human Element : humanList) {
+			double height = Element.getHeight();
+			double weight = Element.getWeight();
 			double bmi = weight / (height * height);
 			bmiArray.add(bmi);
 		}
@@ -46,9 +55,9 @@ public class MyList {
 	}
 
 	public void plusAge(List<Human> humanList) {
-		for (Human people : humanList) {
-			int age = people.getAge();
-			age += 1;
+		for (Human Element : humanList) {
+			int age = Element.getAge();
+			System.out.println();
 		}
 	}
 }
