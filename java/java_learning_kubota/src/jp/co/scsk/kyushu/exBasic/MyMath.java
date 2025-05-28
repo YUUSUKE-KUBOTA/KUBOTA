@@ -2,22 +2,6 @@ package jp.co.scsk.kyushu.exBasic;
 
 public class MyMath {
 
-//	public static void main(String[] args) {
-//		MyMath myMath = new MyMath();
-//		int num1 = 20;
-//		int num2 = 3;
-//		System.out.println(myMath.calcPlus(num1, num2));
-//		System.out.println(myMath.calcMinus(num1, num2));
-//		System.out.println(myMath.calcTime(num1, num2));
-//		System.out.println(myMath.calcDiv(num1, num2));
-//		System.out.println(myMath.calcMod(num1, num2));
-//		System.out.println(myMath.calcSum(num1, num2));
-//		System.out.println(myMath.calcAvg(num1, num2));
-//		System.out.println(myMath.countUpSum1(num2, num1));
-//		System.out.println(myMath.countUpSum2(num2, num1));
-//		System.out.println(myMath.countUpSum3(num2, num1));
-//	}
-
 	public int calcPlus(int num1, int num2) {
 		int result = 0;
 		result = num1 + num2;

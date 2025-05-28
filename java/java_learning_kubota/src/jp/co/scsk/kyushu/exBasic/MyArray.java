@@ -1,6 +1,7 @@
 package jp.co.scsk.kyushu.exBasic;
 
 public class MyArray {
+
 	public int[] getRomdomNumberArray(int num) {
 		int[] array;
 		array = new int[num];
@@ -9,7 +10,7 @@ public class MyArray {
 		}
 		return array;
 	}
-	
+
 	public int[][] getMultipleResultArray(int[] array1, int[] array2) {
 		int resultArray[][];
 		resultArray = new int[array1.length][array2.length];
