@@ -33,27 +33,27 @@ public class Human {
 		return this.weight;
 	}
 
-	public void getAge(int age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 
-	public void getName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	public void getSex(Sex sex) {
+	public void setSex(Sex sex) {
 		this.sex = sex;
 	}
 
-	public void getBlood(Blood blood) {
+	public void setBlood(Blood blood) {
 		this.blood = blood;
 	}
 
-	public void getHeight(double height) {
+	public void setHeight(double height) {
 		this.height = height;
 	}
 
-	public void getWeight(double weight) {
+	public void setWeight(double weight) {
 		this.weight = weight;
 	}
 

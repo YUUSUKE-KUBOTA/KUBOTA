@@ -33,4 +33,22 @@ public class MyList {
 		}
 		return new ArrayList<>(set);
 	}
+
+	public List<Double> calcBMI(List<Human> humanList) {
+		ArrayList<Double> bmiArray = new ArrayList<>();
+		for (Human people : humanList) {
+			double height = people.getHeight();
+			double weight = people.getWeight();
+			double bmi = weight / (height * height);
+			bmiArray.add(bmi);
+		}
+		return bmiArray;
+	}
+
+	public void plusAge(List<Human> humanList) {
+		for (Human people : humanList) {
+			int age = people.getAge();
+			age += 1;
+		}
+	}
 }
