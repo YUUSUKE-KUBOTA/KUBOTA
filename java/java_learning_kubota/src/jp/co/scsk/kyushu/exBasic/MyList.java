@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 
 public class MyList {
-	
+
 	public static void main(String[] args) {
 		MyList myList = new MyList();
 		int x = 10;
@@ -23,6 +23,7 @@ public class MyList {
 		System.out.println(myList.getRomdomNumberDuplicationList2(x));
 		System.out.println(myList.calcBMI(humanList));
 		myList.plusAge(humanList);
+		System.out.println(human1.getAge());
 	}
 
 	public List<Integer> getRomdomNumberList(int num) {
@@ -35,13 +36,13 @@ public class MyList {
 
 	public List<Integer> getRomdomNumberDuplicationList(int num) {
 		List<Integer> list = new ArrayList<>();
-	    while (list.size() < num) {
-	        int num1 = (int) (Math.random() * 101);
-	        if (!list.contains(num1)) {
-	            list.add(num1);
-	        }
-	    }
-	    return list;
+		while (list.size() < num) {
+			int num1 = (int) (Math.random() * 101);
+			if (!list.contains(num1)) {
+				list.add(num1);
+			}
+		}
+		return list;
 	}
 
 	public List<Integer> getRomdomNumberDuplicationList2(int num) {
@@ -66,8 +67,7 @@ public class MyList {
 	public void plusAge(List<Human> humanList) {
 		for (Human Element : humanList) {
 			int age = Element.getAge();
-			age += 1;
-			System.out.println(age);
+			Element.setAge(age + 1);
 		}
 	}
 }
