@@ -55,10 +55,10 @@ public class MyList {
 
 	public List<Double> calcBMI(List<Human> humanList) {
 		ArrayList<Double> bmiArray = new ArrayList<>();
-		for (Human Element : humanList) {
-			double height = Element.getHeight();
-			double weight = Element.getWeight();
-			double bmi = weight / (height * height) * 10000;
+		for (Human element : humanList) {
+			double height = element.getHeight();
+			double weight = element.getWeight();
+			double bmi = weight / (height * height) * 100 * 100;
 			bmiArray.add((Double) bmi);
 		}
 		return bmiArray;
@@ -66,8 +66,7 @@ public class MyList {
 
 	public void plusAge(List<Human> humanList) {
 		for (Human Element : humanList) {
-			int age = Element.getAge();
-			Element.setAge(age + 1);
+			Element.setAge(Element.getAge() + 1);
 		}
 	}
 }

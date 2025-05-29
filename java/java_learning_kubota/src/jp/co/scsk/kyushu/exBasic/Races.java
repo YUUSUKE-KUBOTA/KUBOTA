@@ -55,24 +55,32 @@ public class Races {
 	public static Map<Integer, Map<Integer, RacerInfo>> createRaceResult(ArrayList<RacerInfo> racerInfoArray) {
 	    HashMap<Integer, Map<Integer, RacerInfo>> result = new HashMap<>();    
 	    for (RacerInfo racerInfo : racerInfoArray) {
-	        Map<Integer, RacerInfo> onePartResult = result.getOrDefault(racerInfo.getNumber(), new HashMap<>());
-	        onePartResult.put(racerInfo.getRank(), racerInfo);
-	        result.put(racerInfo.getNumber(), onePartResult);
-	    }
-	    return result;
+			Map<Integer, RacerInfo> onePartResult = result.getOrDefault(racerInfo.getNumber(), new HashMap<>());
+			onePartResult.put(racerInfo.getRank(), racerInfo);
+			result.put(racerInfo.getNumber(), onePartResult);
+		}
+		return result;
 	}
-
-//	public void sortRaceResult(Map<Integer, Map<Integer, RacerInfo>> raceResultMap, int number) {
-//		HashMap<Integer, Map<Integer, RacerInfo>> result = new HashMap<>();
-//		HashMap<Integer, RacerInfo> onePartResult = new HashMap<>();
-//		int i = 0;
-//		for (Map<Integer, RacerInfo> raceResultMapValues : raceResultMap.values()) {
-//			for (Integer raceResultMapValuesKey : raceResultMapValues.keySet()) {
-//				int[] array;
-//				array = new int[raceResultMapValues.keySet().size()];
-//				array[i] = raceResultMapValuesKey;
-//				i++;
-//			}
-//		}
-//	}
+	
+	public void sortRaceResult(Map<Integer, Map<Integer, RacerInfo>> raceResult, int raceNumber) {
+		
+		
+		ArrayList<Map<Integer, Map<Integer, RacerInfo>>> arrayList = new ArrayList<>();
+		for(Integer i : raceResult.keySet()) {
+			if(i == raceNumber) {
+				
+			}
+			
+		}
+		
+	}
+	public void bestRacerInfoOfRace(Map<Integer, Map<Integer, RacerInfo>> raceResultMap) {
+		Map<Integer, String> firstPlaceNames = new HashMap<>();
+		for (Map.Entry<Integer, Map<Integer, RacerInfo>> entry : raceResultMap.entrySet()) {
+			Map<Integer, RacerInfo> raceResults = entry.getValue();
+			RacerInfo firstPlaceRacer = raceResults.get(1);
+			firstPlaceNames.put(entry.getKey(), firstPlaceRacer.getName());
+		}
+		
+	}
 }
