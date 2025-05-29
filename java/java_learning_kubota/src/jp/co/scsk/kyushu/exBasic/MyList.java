@@ -57,7 +57,7 @@ public class MyList {
 		for (Human Element : humanList) {
 			double height = Element.getHeight();
 			double weight = Element.getWeight();
-			double bmi = weight / ((height / 100) * (height / 100));
+			double bmi = weight / (height * height) / 10000;
 			bmiArray.add((Double) bmi);
 		}
 		return bmiArray;

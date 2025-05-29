@@ -40,6 +40,7 @@ public class Price {
 			count++;
 			if (count == 5) {
 				count = 1;
+				result -= praice;
 			}
 		}
 		return result;

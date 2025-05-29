@@ -6,6 +6,7 @@ public class RacerInfo {
 	private int number;
 	private int rank;
 	private double time;
+	
 
 	public String getName() {
 		return name;
