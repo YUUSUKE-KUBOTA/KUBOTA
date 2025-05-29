@@ -7,16 +7,15 @@ public class Marriage {
 
 	public boolean checkMarriage(Human person) {
 		if (person.getSex().isMan()) {
-			return person.getAge() > 18;
+			return person.getAge() >= 18;
 		}
 		if (person.getSex().isWoman()) {
-			return person.getAge() > 16;
+			return person.getAge() >= 16;
 		}
 		return false;
 	}
 
 	public boolean checkMarriage(Human person1, Human person2) {
-		return ((person1.getSex().isMan() && person2.getSex().isWoman())
-				|| (person1.getSex().isWoman() && person2.getSex().isMan()));
+		return (person1.getSex() != person2.getSex());
 	}
 }
