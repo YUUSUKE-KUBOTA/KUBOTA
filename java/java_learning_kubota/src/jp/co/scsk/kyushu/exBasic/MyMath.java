@@ -1,17 +1,15 @@
 package jp.co.scsk.kyushu.exBasic;
 
+import java.util.Arrays;
+
 public class MyMath {
 
 	public int calcPlus(int num1, int num2) {
-		int result = 0;
-		result = num1 + num2;
-		return result;
+		return num1 + num2;
 	}
 
 	public int calcMinus(int num1, int num2) {
-		int result = 0;
-		result = num1 - num2;
-		return result;
+		return num1 - num2;
 	}
 
 	public int calcTime(int num1, int num2) {
@@ -23,14 +21,11 @@ public class MyMath {
 	}
 
 	public int calcDiv(int num1, int num2) {
-		int result = 0;
-		result = num1 / num2;
-		return result;
+		return num1 / num2;
 	}
 
 	public int calcMod(int num1, int num2) {
-		int result = 0;
-		result = num1 - (calcDiv(num1, num2) * num2);
+		int result = num1 - (calcDiv(num1, num2) * num2);
 		return result;
 	}
 
@@ -43,13 +38,7 @@ public class MyMath {
 	}
 
 	public double calcAvg(int... num) {
-		double result = 0;
-		int i = 0;
-		for (double ex : num) {
-			result += ex;
-			i++;
-		}
-		return result /= i;
+		return calcSum(num) / num.length;
 	}
 
 	public int countUpSum1(int num1, int num2) {
@@ -68,16 +57,16 @@ public class MyMath {
 		}
 		return result;
 	}
-	
+
 	public int countUpSum3(int num1, int num2) {
 		int result = 0;
 		do {
 			result += num1;
 			num1++;
-		}while(num1 <= num2);
+		} while (num1 <= num2);
 		return result;
 	}
-	
+
 	public int calc(int num1, int num2, int num3) {
 		switch (num1) {
 		case 1:
@@ -91,74 +80,52 @@ public class MyMath {
 		case 5:
 			return calcDiv(num2, num3);
 		default:
-			return -1;
+			return 0;
 		}
 	}
-	
+
 	public int max(int... num) {
 		int max = Integer.MIN_VALUE;
 		for (int number : num) {
-			if(max < number) {
+			if (max < number) {
 				max = number;
 			}
 		}
 		return max;
 	}
-	
+
 	public int min(int... num) {
 		int min = Integer.MAX_VALUE;
 		for (int number : num) {
-			if(min > number) {
+			if (min > number) {
 				min = number;
 			}
 		}
 		return min;
 	}
-	
+
 	public int calc2(int... num) {
 		int result = 0;
-		if (num.length == 0) {
-			return result;
-		}
 		switch (num[0]) {
 		case 1:
-			for (int number : num) {
-				result += number;
-			}
-			return result;
+			result = calcSum(num);
+			return result -= num[0];
 		case 2:
-			for (int number : num) {
-				result += number;
-			}
-			return result /= num.length;
+			return (int) calcAvg(Arrays.copyOfRange(num, 1, num.length));
 		case 3:
-			int max = num[0];
-			for (int number : num) {
-				if (max < number) {
-					max = number;
-				}
-			}
-			return max;
+			return max(Arrays.copyOfRange(num, 1, num.length));
 		case 4:
-			int min = num[0];
-			for (int number : num) {
-				if (min > number) {
-					min = number;
-				}
-			}
-			return min;
+			return min(Arrays.copyOfRange(num, 1, num.length));
 		default:
-			return result - 1;
+			return result;
 		}
 	}
-	
-	public void round4(double num) {
-		num += 0.6;
-		int result = (int) num;
+
+	public int round4(double num) {
+		return (int) (num += 0.6);
 	}
-	
-	public void round6(double num) {
-		num += 0.4;
-		int result = (int) num;
+
+	public int round6(double num) {
+		return (int) (num += 0.4);
 	}
 }
