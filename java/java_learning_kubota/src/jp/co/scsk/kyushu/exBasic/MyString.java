@@ -35,7 +35,7 @@ public class MyString {
 		String str1 = array[0];
 		for (int i = 1; i < array.length; i++) {
 			String str2 = array[i];
-			str1.concat(str2);
+			str1 += str2;
 		}
 		return str1;
 	}

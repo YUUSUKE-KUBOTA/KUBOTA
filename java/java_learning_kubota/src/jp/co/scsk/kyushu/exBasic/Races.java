@@ -3,6 +3,7 @@ package jp.co.scsk.kyushu.exBasic;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeSet;
 
 public class Races {
 	
@@ -63,17 +64,18 @@ public class Races {
 	}
 	
 	public void sortRaceResult(Map<Integer, Map<Integer, RacerInfo>> raceResult, int raceNumber) {
-		
-		
-		ArrayList<Map<Integer, Map<Integer, RacerInfo>>> arrayList = new ArrayList<>();
-		for(Integer i : raceResult.keySet()) {
-			if(i == raceNumber) {
-				
+		TreeSet<Map<Integer, Map<Integer, RacerInfo>>> treeSet = new TreeSet<>();
+		for(Integer raceResultKey : raceResult.keySet()) {
+			if(raceResultKey == raceNumber) {
+				set.add(raceResult);
 			}
-			
+		}
+		for(Map<Integer, Map<Integer, RacerInfo>> inHashSet : hreeSet) {
+//			arrayList.sort(inArrayList.get(arrayList), );
 		}
 		
 	}
+	
 	public void bestRacerInfoOfRace(Map<Integer, Map<Integer, RacerInfo>> raceResultMap) {
 		Map<Integer, String> firstPlaceNames = new HashMap<>();
 		for (Map.Entry<Integer, Map<Integer, RacerInfo>> entry : raceResultMap.entrySet()) {
