@@ -1,9 +1,10 @@
 package jp.co.scsk.kyushu.exBasic;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-import java.util.TreeSet;
 
 public class Races {
 	
@@ -41,15 +42,16 @@ public class Races {
 		racerInfo5.setTime(9.30);
 		racerInfoArray.add(racerInfo5);
 		raceResultMap = createRaceResult(racerInfoArray);
-		
-		for (int raceOrder : raceResultMap.keySet()) {
-			System.out.println("レース順: " + raceOrder);
-			Map<Integer, RacerInfo> rankMap = raceResultMap.get(raceOrder);
-			for (int rank : rankMap.keySet()) {
-				RacerInfo racerInfo = rankMap.get(rank);
-				System.out.println("  順位: " + rank + ", 走者名: " + racerInfo.getName() + ", タイム: " + racerInfo.getTime());
-			}
-		}
+		Races races = new Races();
+		races.sortRaceResult(raceResultMap, 1);
+//		for (int raceOrder : raceResultMap.keySet()) {
+//			System.out.println("レース順: " + raceOrder);
+//			Map<Integer, RacerInfo> rankMap = raceResultMap.get(raceOrder);
+//			for (int rank : rankMap.keySet()) {
+//				RacerInfo racerInfo = rankMap.get(rank);
+//				System.out.println("  順位: " + rank + ", 走者名: " + racerInfo.getName() + ", タイム: " + racerInfo.getTime());
+//			}
+//		}
 		
 	}
 	
@@ -64,16 +66,16 @@ public class Races {
 	}
 	
 	public void sortRaceResult(Map<Integer, Map<Integer, RacerInfo>> raceResult, int raceNumber) {
-		TreeSet<Map<Integer, Map<Integer, RacerInfo>>> treeSet = new TreeSet<>();
-		for(Integer raceResultKey : raceResult.keySet()) {
-			if(raceResultKey == raceNumber) {
-				set.add(raceResult);
-			}
-		}
-		for(Map<Integer, Map<Integer, RacerInfo>> inHashSet : hreeSet) {
-//			arrayList.sort(inArrayList.get(arrayList), );
-		}
-		
+	    Map<Integer, RacerInfo> specificRaceResult = raceResult.get(raceNumber);
+	    if (specificRaceResult != null) {
+	        List<Integer> sortedKeys = new ArrayList<>(specificRaceResult.keySet());
+	        Collections.sort(sortedKeys);
+	        System.out.println(raceNumber + "レース目");
+	        for (Integer key : sortedKeys) {
+	            RacerInfo racerInfo = specificRaceResult.get(key);
+	            System.out.println(racerInfo.getName());
+	        }
+	    }
 	}
 	
 	public void bestRacerInfoOfRace(Map<Integer, Map<Integer, RacerInfo>> raceResultMap) {
