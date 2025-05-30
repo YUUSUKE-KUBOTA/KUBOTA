@@ -25,8 +25,7 @@ public class MyMath {
 	}
 
 	public int calcMod(int num1, int num2) {
-		int result = num1 - (calcDiv(num1, num2) * num2);
-		return result;
+		return num1 - (calcDiv(num1, num2) * num2);
 	}
 
 	public int calcSum(int... num) {
@@ -80,7 +79,7 @@ public class MyMath {
 		case 5:
 			return calcDiv(num2, num3);
 		default:
-			return 0;
+			throw new IllegalArgumentException("第一引数が1～4ではありません");
 		}
 	}
 
@@ -106,18 +105,19 @@ public class MyMath {
 
 	public int calc2(int... num) {
 		int result = 0;
+		int[] array = Arrays.copyOfRange(num, 1, num.length);
 		switch (num[0]) {
 		case 1:
 			result = calcSum(num);
 			return result -= num[0];
 		case 2:
-			return (int) calcAvg(Arrays.copyOfRange(num, 1, num.length));
+			return (int) calcAvg(array);
 		case 3:
-			return max(Arrays.copyOfRange(num, 1, num.length));
+			return max(array);
 		case 4:
-			return min(Arrays.copyOfRange(num, 1, num.length));
+			return min(array);
 		default:
-			return result;
+			throw new IllegalArgumentException("第一引数が1～4ではありません");
 		}
 	}
 
