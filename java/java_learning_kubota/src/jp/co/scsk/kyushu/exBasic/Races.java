@@ -89,10 +89,9 @@ public class Races {
 	public void bestRacerInfoOfRace(Map<Integer, Map<Integer, RacerInfo>> raceResultMap) {
 		List<RacerInfo> firstRankList = new ArrayList<>();
 		for (Map<Integer, RacerInfo> innerMap : raceResultMap.values()) {
-			for (RacerInfo racerInfo : innerMap.values()) {
-				if (racerInfo.getRank() == 1) {
-					firstRankList.add(racerInfo);
-				}
+			RacerInfo firstRankRacer = innerMap.get(1);
+			if (firstRankRacer != null) {
+				firstRankList.add(firstRankRacer);
 			}
 		}
 		for (RacerInfo racerInfo : firstRankList) {

@@ -69,7 +69,8 @@ public class VendingMachines {
 		vendingMachine.haveMoney.addTenThousandYen(vendingMachine.putMoney.getTenThousandYen() - money.getTenThousandYen());
 	}
 	
-	public Moneys PutMoney() {
+	//入れたお金
+	public static Moneys PutMoney() {
 		Moneys putMoney = new Moneys();
 		putMoney.setOneYen(0);
 		putMoney.setFiveYen(0);
@@ -84,7 +85,8 @@ public class VendingMachines {
 		return putMoney;
 	}
 	
-	public Moneys HaveMoney() {
+	//自販機のお金
+	public static Moneys HaveMoney() {
 		Moneys haveMoney = new Moneys();
 		haveMoney.setOneYen(10);
 		haveMoney.setFiveYen(10);
@@ -99,7 +101,7 @@ public class VendingMachines {
 		return haveMoney;
 	}
 	
-	public List<Drink> DrinkList(){
+	public static List<Drink> DrinkList(){
 		List<Drink> drinkList = new ArrayList<>();
 		Drink drink1 = new Drink("ファンタ", 500, 180);
 		Drink drink2 = new Drink("三ツ矢サイダー", 500, 160);
@@ -130,6 +132,7 @@ public class VendingMachines {
 	}
 	
 	public Moneys getChange(int change) {
+		VendingMachines vendingMachine = new VendingMachines();
 		Moneys money = new Moneys();
 		int i = 0;
 		while(change % 5000 >= 0) {
@@ -176,6 +179,36 @@ public class VendingMachines {
 			i++;
 		}
 		money.setOneYen(i);
+		vendingMachine.haveMoney.addOneYen(vendingMachine.putMoney.getOneYen() - money.getOneYen());
+		vendingMachine.haveMoney.addFiveYen(vendingMachine.putMoney.getFiveYen() - money.getFiveYen());
+		vendingMachine.haveMoney.addTenYen(vendingMachine.putMoney.getTenYen() - money.getTenYen());
+		vendingMachine.haveMoney.addFiftyYen(vendingMachine.putMoney.getFiftyYen() - money.getFiftyYen());
+		vendingMachine.haveMoney.addOneHundredYen(vendingMachine.putMoney.getOneHundredYen() - money.getOneHundredYen());
+		vendingMachine.haveMoney.addFiveHundredYen(vendingMachine.putMoney.getFiveHundredYen() - money.getFiveHundredYen());
+		vendingMachine.haveMoney.addOneThousandYen(vendingMachine.putMoney.getOneThousandYen() - money.getOneThousandYen());
+		vendingMachine.haveMoney.addTwoThousandYen(vendingMachine.putMoney.getTwoThousandYen() - money.getTwoThousandYen());
+		vendingMachine.haveMoney.addFiveThousandYen(vendingMachine.putMoney.getFiveThousandYen() - money.getFiveThousandYen());
+		vendingMachine.haveMoney.addTenThousandYen(vendingMachine.putMoney.getTenThousandYen() - money.getTenThousandYen());
+		vendingMachine.putMoney.clear();
 		return money;
+	}
+	
+	public Moneys boughtDrink(Moneys money) {
+		VendingMachines vendingMachine = new VendingMachines();
+		
+		//ドリンクダウンロード
+		List<Drink> drinkList = new ArrayList<>(); 
+		drinkList = vendingMachine.DrinkList();
+		//買えるドリンク
+		List<Drink> canBuyDrinkList = vendingMachine.insertMoneys(money);
+		//どのドリンク買うか
+		Drink buyDrink = canBuyDrinkList.get(0);
+		
+		int change = vendingMachine.calcChange(buyDrink);
+		int last = vendingMachine.kindCount.get(drinkList.get(0));
+		vendingMachine.kindCount.remove(drinkList.get(0));
+		vendingMachine.kindCount.put(buyDrink, last - 1);
+		
+		System.out.println();
 	}
 }
