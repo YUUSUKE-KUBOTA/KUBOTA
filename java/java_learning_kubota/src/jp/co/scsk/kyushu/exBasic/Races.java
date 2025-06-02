@@ -47,11 +47,11 @@ public class Races {
 		racerInfoArray.add(racerInfo5);
 		raceResultMap = createRaceResult(racerInfoArray);
 		Races races = new Races();
-		//races.sortRaceResult(raceResultMap, 1);
-		//races.bestRacerInfoOfRace(raceResultMap);
-		//races.bestRacerInfoOfAll(raceResultMap);
-		//races.worstRacerInfoOfAll(raceResultMap);
-		//races.winnerRacerInfo(raceResultMap);
+		races.sortRaceResult(raceResultMap, 1);
+		races.bestRacerInfoOfRace(raceResultMap);
+		races.bestRacerInfoOfAll(raceResultMap);
+		races.worstRacerInfoOfAll(raceResultMap);
+		races.winnerRacerInfo(raceResultMap);
 		races.top10RacerInfo(raceResultMap);
 		for (int raceOrder : raceResultMap.keySet()) {
 			System.out.println("レース順: " + raceOrder);
@@ -61,7 +61,6 @@ public class Races {
 				System.out.println("  順位: " + rank + ", 走者名: " + racerInfo.getName() + ", タイム: " + racerInfo.getTime());
 			}
 		}
-
 	}
 
 	public static Map<Integer, Map<Integer, RacerInfo>> createRaceResult(ArrayList<RacerInfo> racerInfoArray) {
@@ -142,26 +141,27 @@ public class Races {
 	}
 
 	public void top10RacerInfo(Map<Integer, Map<Integer, RacerInfo>> raceResultMap) {
-		TreeSet<Map.Entry<Integer, RacerInfo>> racerInfoSet = new TreeSet<>(new Comparator<Map.Entry<Integer, RacerInfo>>() {
-		    @Override
-		    public int compare(Map.Entry<Integer, RacerInfo> e1, Map.Entry<Integer, RacerInfo> e2) {
-		        return Double.compare(e1.getValue().getTime(), e2.getValue().getTime());
-		    }
-		});
+		TreeSet<Map.Entry<Integer, RacerInfo>> racerInfoSet = new TreeSet<>(
+				new Comparator<Map.Entry<Integer, RacerInfo>>() {
+					@Override
+					public int compare(Map.Entry<Integer, RacerInfo> e1, Map.Entry<Integer, RacerInfo> e2) {
+						return Double.compare(e1.getValue().getTime(), e2.getValue().getTime());
+					}
+				});
 		for (Map.Entry<Integer, Map<Integer, RacerInfo>> outEntry : raceResultMap.entrySet()) {
 			Map<Integer, RacerInfo> raceResults = outEntry.getValue();
 			for (Map.Entry<Integer, RacerInfo> innerEntry : raceResults.entrySet()) {
 				if (!racerInfoSet.isEmpty() && racerInfoSet.size() >= 10) {
-				    if (racerInfoSet.last().getValue().getTime() < innerEntry.getValue().getTime()) {
-				        racerInfoSet.pollLast();
-				        racerInfoSet.add(innerEntry);
-				    }
+					if (racerInfoSet.last().getValue().getTime() < innerEntry.getValue().getTime()) {
+						racerInfoSet.pollLast();
+						racerInfoSet.add(innerEntry);
+					}
 				} else {
-				    racerInfoSet.add(innerEntry);
+					racerInfoSet.add(innerEntry);
 				}
 			}
 		}
-		for(Map.Entry<Integer, RacerInfo> printMap : racerInfoSet) {
+		for (Map.Entry<Integer, RacerInfo> printMap : racerInfoSet) {
 			System.out.println(printMap.getValue().getName());
 			System.out.println(printMap.getValue().getTime());
 			System.out.println(printMap.getValue().getNumber());
