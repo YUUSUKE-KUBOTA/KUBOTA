@@ -87,11 +87,16 @@ public class Races {
 	}
 
 	public void bestRacerInfoOfRace(Map<Integer, Map<Integer, RacerInfo>> raceResultMap) {
-		for (Map.Entry<Integer, Map<Integer, RacerInfo>> entry : raceResultMap.entrySet()) {
-			Map<Integer, RacerInfo> raceResults = entry.getValue();
-			RacerInfo firstPlaceRacer = raceResults.get(1);
-			System.out.println(entry.getKey() + "レース目1位");
-			System.out.println(firstPlaceRacer.getName());
+		List<RacerInfo> firstPlaceRacers = new ArrayList<>();
+		for (Map<Integer, RacerInfo> innerMap : raceResultMap.values()) {
+			for (RacerInfo racerInfo : innerMap.values()) {
+				if (racerInfo.getRank() == 1) {
+					firstPlaceRacers.add(racerInfo);
+				}
+			}
+		}
+		for (RacerInfo racerInfo : firstPlaceRacers) {
+			System.out.println(racerInfo.getName() + racerInfo.getRank() + racerInfo.getNumber());
 		}
 	}
 

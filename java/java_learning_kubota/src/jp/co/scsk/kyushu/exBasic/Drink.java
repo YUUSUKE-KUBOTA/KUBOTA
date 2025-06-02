@@ -15,10 +15,6 @@ public class Drink {
 		return productName;
 	}
 
-	public int getQuantity() {
-		return quantity;
-	}
-
 	public int getPraice() {
 		return praice;
 	}

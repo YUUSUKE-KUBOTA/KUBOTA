@@ -49,7 +49,7 @@ public class Moneys {
 		return fiveThousandYen;
 	}
 
-	public int getTenHundredYen() {
+	public int getTenThousandYen() {
 		return tenThousandYen;
 	}
 
@@ -107,7 +107,7 @@ public class Moneys {
 		return answer;
 	}
 
-	public boolean addfiveYen(int num) {
+	public boolean addFiveYen(int num) {
 		boolean answer = true;
 		for (int i = 0; i < num; i++) {
 			this.fiveYen++;
@@ -121,7 +121,7 @@ public class Moneys {
 		return answer;
 	}
 
-	public boolean addtenYen(int num) {
+	public boolean addTenYen(int num) {
 		boolean answer = true;
 		for (int i = 0; i < num; i++) {
 			this.tenYen++;
@@ -135,7 +135,7 @@ public class Moneys {
 		return answer;
 	}
 
-	public boolean addfiftyYen(int num) {
+	public boolean addFiftyYen(int num) {
 		boolean answer = true;
 		for (int i = 0; i < num; i++) {
 			this.fiftyYen++;
@@ -149,7 +149,7 @@ public class Moneys {
 		return answer;
 	}
 
-	public boolean oneHundred(int num) {
+	public boolean addOneHundredYen(int num) {
 		boolean answer = true;
 		for (int i = 0; i < num; i++) {
 			this.oneHundredYen++;
@@ -163,7 +163,7 @@ public class Moneys {
 		return answer;
 	}
 
-	public boolean addfiveHundredYen(int num) {
+	public boolean addFiveHundredYen(int num) {
 		boolean answer = true;
 		for (int i = 0; i < num; i++) {
 			this.fiveHundredYen++;
@@ -177,7 +177,7 @@ public class Moneys {
 		return answer;
 	}
 
-	public boolean addoneThousandYen(int num) {
+	public boolean addOneThousandYen(int num) {
 		boolean answer = true;
 		for (int i = 0; i < num; i++) {
 			this.oneThousandYen++;
@@ -191,7 +191,7 @@ public class Moneys {
 		return answer;
 	}
 
-	public boolean addtwoThousandYen(int num) {
+	public boolean addTwoThousandYen(int num) {
 		boolean answer = true;
 		for (int i = 0; i < num; i++) {
 			this.twoThousandYen++;
@@ -205,7 +205,7 @@ public class Moneys {
 		return answer;
 	}
 
-	public boolean addfiveThousandYen(int num) {
+	public boolean addFiveThousandYen(int num) {
 		boolean answer = true;
 		for (int i = 0; i < num; i++) {
 			this.fiveThousandYen++;
@@ -219,7 +219,7 @@ public class Moneys {
 		return answer;
 	}
 
-	public boolean addtenThousandYen(int num) {
+	public boolean addTenThousandYen(int num) {
 		boolean answer = true;
 		for (int i = 0; i < num; i++) {
 			this.tenThousandYen++;
