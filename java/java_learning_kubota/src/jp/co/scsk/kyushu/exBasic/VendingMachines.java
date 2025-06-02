@@ -53,10 +53,8 @@ public class VendingMachines {
 		vendingMachine.haveMoney.addTenThousandYen(vendingMachine.putMoney.getTenThousandYen() - money.getTenThousandYen());
 		vendingMachine.putMoney.clear();
 		
-//		int last = vendingMachine.kindCount.get(drinkList.get(0));
-//		vendingMachine.kindCount.remove(drinkList.get(0));
-//		vendingMachine.kindCount.put(buyDrink, last - 1);
-		
+		vendingMachine.kindCount.remove(drinkList.get(0));
+//		vendingMachine.kindCount.put(drink, last - 1);
 		
 		vendingMachine.haveMoney.addOneYen(vendingMachine.putMoney.getOneYen());
 		vendingMachine.haveMoney.addFiveYen(vendingMachine.putMoney.getFiveYen());
