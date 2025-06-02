@@ -12,14 +12,8 @@ public class VendingMachines {
 	private Moneys putMoney;
 
 	public static void main(String[] args) {
-		//どの飲み物がどのくらいの数はいってるか
-		
-		
-		//定義
 		VendingMachines vendingMachine = new VendingMachines();
-		List<Drink> canBuyDrinkList = new ArrayList<>(); 
-		vendingMachine.putMoney = new Moneys();
-		vendingMachine.haveMoney = new Moneys();
+		//どの飲み物がどのくらいの数はいってるか
 		vendingMachine.kindCount = new HashMap<>();
 		
 		//ドリンクのリストをインプット
@@ -32,18 +26,37 @@ public class VendingMachines {
 		}
 		
 		//お金たちをインプット
-		vendingMachine.haveMoney = HaveMoney();
-		vendingMachine.putMoney = PutMoney();
+		Moneys haveMoney = new Moneys();
+		haveMoney.setOneYen(10);
+		haveMoney.setFiveYen(10);
+		haveMoney.setTenYen(10);
+		haveMoney.setFiftyYen(10);
+		haveMoney.setOneHundredYen(10);
+		haveMoney.setFiveHundredYen(10);
+		haveMoney.setOneThousandYen(10);
+		haveMoney.setTwoThousandYen(10);
+		haveMoney.setFiveThousandYen(1);
+		haveMoney.setTenThousandYen(1);
 		
-		//入れたお金で買えるドリンクのリストを表示させる。
-		canBuyDrinkList = vendingMachine.insertMoneys(vendingMachine.putMoney);
+		Moneys money = PutMoney();
+		Moneys change = vendingMachine.boughtDrink(money);
+		//おつり分を自販機からなくす
+		vendingMachine.haveMoney.addOneYen(vendingMachine.putMoney.getOneYen() - money.getOneYen());
+		vendingMachine.haveMoney.addFiveYen(vendingMachine.putMoney.getFiveYen() - money.getFiveYen());
+		vendingMachine.haveMoney.addTenYen(vendingMachine.putMoney.getTenYen() - money.getTenYen());
+		vendingMachine.haveMoney.addFiftyYen(vendingMachine.putMoney.getFiftyYen() - money.getFiftyYen());
+		vendingMachine.haveMoney.addOneHundredYen(vendingMachine.putMoney.getOneHundredYen() - money.getOneHundredYen());
+		vendingMachine.haveMoney.addFiveHundredYen(vendingMachine.putMoney.getFiveHundredYen() - money.getFiveHundredYen());
+		vendingMachine.haveMoney.addOneThousandYen(vendingMachine.putMoney.getOneThousandYen() - money.getOneThousandYen());
+		vendingMachine.haveMoney.addTwoThousandYen(vendingMachine.putMoney.getTwoThousandYen() - money.getTwoThousandYen());
+		vendingMachine.haveMoney.addFiveThousandYen(vendingMachine.putMoney.getFiveThousandYen() - money.getFiveThousandYen());
+		vendingMachine.haveMoney.addTenThousandYen(vendingMachine.putMoney.getTenThousandYen() - money.getTenThousandYen());
+		vendingMachine.putMoney.clear();
 		
-		//買ったドリンクの指定と、そのおつり、残りの本数
-		Drink buyDrink = canBuyDrinkList.get(0);
-		int change = vendingMachine.calcChange(buyDrink);
-		int last = vendingMachine.kindCount.get(drinkList.get(0));
-		vendingMachine.kindCount.remove(drinkList.get(0));
-		vendingMachine.kindCount.put(buyDrink, last - 1);
+//		int last = vendingMachine.kindCount.get(drinkList.get(0));
+//		vendingMachine.kindCount.remove(drinkList.get(0));
+//		vendingMachine.kindCount.put(buyDrink, last - 1);
+		
 		
 		vendingMachine.haveMoney.addOneYen(vendingMachine.putMoney.getOneYen());
 		vendingMachine.haveMoney.addFiveYen(vendingMachine.putMoney.getFiveYen());
@@ -56,20 +69,7 @@ public class VendingMachines {
 		vendingMachine.haveMoney.addFiveThousandYen(vendingMachine.putMoney.getFiveThousandYen());
 		vendingMachine.haveMoney.addTenThousandYen(vendingMachine.putMoney.getTenThousandYen());
 		
-		//入れたお金の種類おつりがかえってくる
-		Moneys money = vendingMachine.getChange(change);
-		vendingMachine.putMoney.clear();
-		
-		vendingMachine.haveMoney.addOneYen(vendingMachine.putMoney.getOneYen() - money.getOneYen());
-		vendingMachine.haveMoney.addFiveYen(vendingMachine.putMoney.getFiveYen() - money.getFiveYen());
-		vendingMachine.haveMoney.addTenYen(vendingMachine.putMoney.getTenYen() - money.getTenYen());
-		vendingMachine.haveMoney.addFiftyYen(vendingMachine.putMoney.getFiftyYen() - money.getFiftyYen());
-		vendingMachine.haveMoney.addOneHundredYen(vendingMachine.putMoney.getOneHundredYen() - money.getOneHundredYen());
-		vendingMachine.haveMoney.addFiveHundredYen(vendingMachine.putMoney.getFiveHundredYen() - money.getFiveHundredYen());
-		vendingMachine.haveMoney.addOneThousandYen(vendingMachine.putMoney.getOneThousandYen() - money.getOneThousandYen());
-		vendingMachine.haveMoney.addTwoThousandYen(vendingMachine.putMoney.getTwoThousandYen() - money.getTwoThousandYen());
-		vendingMachine.haveMoney.addFiveThousandYen(vendingMachine.putMoney.getFiveThousandYen() - money.getFiveThousandYen());
-		vendingMachine.haveMoney.addTenThousandYen(vendingMachine.putMoney.getTenThousandYen() - money.getTenThousandYen());
+		System.out.println(change);
 	}
 	
 	//入れたお金
@@ -88,22 +88,6 @@ public class VendingMachines {
 		return putMoney;
 	}
 	
-	//自販機のお金
-	public static Moneys HaveMoney() {
-		Moneys haveMoney = new Moneys();
-		haveMoney.setOneYen(10);
-		haveMoney.setFiveYen(10);
-		haveMoney.setTenYen(10);
-		haveMoney.setFiftyYen(10);
-		haveMoney.setOneHundredYen(10);
-		haveMoney.setFiveHundredYen(10);
-		haveMoney.setOneThousandYen(10);
-		haveMoney.setTwoThousandYen(10);
-		haveMoney.setFiveThousandYen(1);
-		haveMoney.setTenThousandYen(1);
-		return haveMoney;
-	}
-	
 	public static List<Drink> DrinkList(){
 		List<Drink> drinkList = new ArrayList<>();
 		Drink drink1 = new Drink("ファンタ", 500, 180);
@@ -119,9 +103,10 @@ public class VendingMachines {
 
 	public List<Drink> insertMoneys(Moneys putMoney) {
 		List<Drink> canBuyDrinkList = new ArrayList<>();
+		Moneys haveMoney = PutMoney();
 		for (Drink drink : DrinkList()) {
-			if (0) {
-				
+			if ((!(haveMoney.getTenYen() > 4)) && (!(haveMoney.getOneHundredYen() > 4))) {
+				break;
 			}
 			if (drink.getPraice() < putMoney.getTotalMoney()) {
 				canBuyDrinkList.add(drink);
@@ -136,87 +121,77 @@ public class VendingMachines {
 	}
 	
 	public Moneys getChange(int change) {
-		VendingMachines vendingMachine = new VendingMachines();
 		Moneys money = new Moneys();
 		int i = 0;
 		while(change % 5000 >= 0) {
+			change -= 5000;
 			i++;
 		}
 		money.setFiveThousandYen(i);
 		i = 0;
 		while(change % 2000 >= 0) {
+			change -= 2000;
 			i++;
 		}
 		money.setTwoThousandYen(i);
 		i = 0;
 		while(change % 1000 >= 0) {
+			change -= 1000;
 			i++;
 		}
 		money.setOneThousandYen(i);
 		i = 0;
 		while(change % 500 >= 0) {
+			change -= 500;
 			i++;
 		}
 		money.setFiveHundredYen(i);
 		i = 0;
 		while(change % 100 >= 0) {
+			change -= 100;
 			i++;
 		}
 		money.setOneHundredYen(i);
 		i = 0;
 		while(change % 50 >= 0) {
+			change -= 50;
 			i++;
 		}
 		money.setFiftyYen(i);
 		i = 0;
 		while(change % 10 >= 0) {
+			change -= 10;
 			i++;
 		}
 		money.setTenYen(i);
 		i = 0;
 		while(change % 5 >= 0) {
+			change -= 5;
 			i++;
 		}
 		money.setFiveYen(i);
 		i = 0;
 		while(change % 1 >= 0) {
+			change -= 1;
 			i++;
 		}
 		money.setOneYen(i);
-		vendingMachine.haveMoney.addOneYen(vendingMachine.putMoney.getOneYen() - money.getOneYen());
-		vendingMachine.haveMoney.addFiveYen(vendingMachine.putMoney.getFiveYen() - money.getFiveYen());
-		vendingMachine.haveMoney.addTenYen(vendingMachine.putMoney.getTenYen() - money.getTenYen());
-		vendingMachine.haveMoney.addFiftyYen(vendingMachine.putMoney.getFiftyYen() - money.getFiftyYen());
-		vendingMachine.haveMoney.addOneHundredYen(vendingMachine.putMoney.getOneHundredYen() - money.getOneHundredYen());
-		vendingMachine.haveMoney.addFiveHundredYen(vendingMachine.putMoney.getFiveHundredYen() - money.getFiveHundredYen());
-		vendingMachine.haveMoney.addOneThousandYen(vendingMachine.putMoney.getOneThousandYen() - money.getOneThousandYen());
-		vendingMachine.haveMoney.addTwoThousandYen(vendingMachine.putMoney.getTwoThousandYen() - money.getTwoThousandYen());
-		vendingMachine.haveMoney.addFiveThousandYen(vendingMachine.putMoney.getFiveThousandYen() - money.getFiveThousandYen());
-		vendingMachine.haveMoney.addTenThousandYen(vendingMachine.putMoney.getTenThousandYen() - money.getTenThousandYen());
-		vendingMachine.putMoney.clear();
 		return money;
 	}
 	
 	public Moneys boughtDrink(Moneys money) {
 		VendingMachines vendingMachine = new VendingMachines();
-		
-		//ドリンクダウンロード
-		List<Drink> drinkList = new ArrayList<>(); 
-		drinkList = DrinkList();
 		//買えるドリンク
 		List<Drink> canBuyDrinkList = vendingMachine.insertMoneys(money);
 		//どのドリンク買うか
 		Drink buyDrink = canBuyDrinkList.get(0);
 		//おつり計算してるけど自販機の中に入ってる数の計算してない
 		int change = vendingMachine.calcChange(buyDrink);
+		//おつりで何が何個返せばいいか
+		Moneys changes = vendingMachine.getChange(change);
 		
-		
-		
-		
-		int last = vendingMachine.kindCount.get(drinkList.get(0));
-		vendingMachine.kindCount.remove(drinkList.get(0));
-		vendingMachine.kindCount.put(buyDrink, last - 1);
-		
-		System.out.println();
+		System.out.println(buyDrink.getProductName());
+
+		return changes;
 	}
 }

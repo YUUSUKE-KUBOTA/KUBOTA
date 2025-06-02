@@ -12,7 +12,7 @@ public class Moneys {
 	private int twoThousandYen;
 	private int fiveThousandYen;;
 	private int tenThousandYen;
-	
+
 	public final int ONE_YEN = 1;
 	public final int FIVE_YEN = 5;
 	public final int TEN_YEN = 10;
@@ -23,7 +23,6 @@ public class Moneys {
 	public final int TWO_THOUSAND_YEN = 2000;
 	public final int FIVE_THOUSAND_YEN = 5000;
 	public final int TEN_THOUSAND_YEN = 10000;
-
 
 	public int getOneYen() {
 		return oneYen;
@@ -259,8 +258,6 @@ public class Moneys {
 		sum += this.tenThousandYen * TEN_THOUSAND_YEN;
 		return sum;
 	}
-	
-	
 
 	public void clear() {
 		this.oneYen = 0;
