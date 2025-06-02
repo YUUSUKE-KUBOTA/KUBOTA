@@ -12,6 +12,18 @@ public class Moneys {
 	private int twoThousandYen;
 	private int fiveThousandYen;;
 	private int tenThousandYen;
+	
+	public final int ONE_YEN = 1;
+	public final int FIVE_YEN = 5;
+	public final int TEN_YEN = 10;
+	public final int FIFTY_YEN = 50;
+	public final int ONE_HUNDRED_YEN = 100;
+	public final int FIVE_HUNDRED_YEN = 500;
+	public final int ONE_THOUSAND_YEN = 1000;
+	public final int TWO_THOUSAND_YEN = 2000;
+	public final int FIVE_THOUSAND_YEN = 5000;
+	public final int TEN_THOUSAND_YEN = 10000;
+
 
 	public int getOneYen() {
 		return oneYen;
@@ -235,18 +247,20 @@ public class Moneys {
 
 	public int getTotalMoney() {
 		int sum = 0;
-		sum += this.oneYen * 1;
-		sum += this.fiveYen * 5;
-		sum += this.tenYen * 10;
-		sum += this.fiftyYen * 50;
-		sum += this.oneHundredYen * 100;
-		sum += this.fiveHundredYen * 500;
-		sum += this.oneThousandYen * 1000;
-		sum += this.twoThousandYen * 2000;
-		sum += this.fiveThousandYen * 5000;
-		sum += this.tenThousandYen * 10000;
+		sum += this.oneYen * ONE_YEN;
+		sum += this.fiveYen * FIVE_YEN;
+		sum += this.tenYen * TEN_YEN;
+		sum += this.fiftyYen * FIFTY_YEN;
+		sum += this.oneHundredYen * ONE_HUNDRED_YEN;
+		sum += this.fiveHundredYen * FIVE_HUNDRED_YEN;
+		sum += this.oneThousandYen * ONE_THOUSAND_YEN;
+		sum += this.twoThousandYen * TWO_THOUSAND_YEN;
+		sum += this.fiveThousandYen * FIVE_THOUSAND_YEN;
+		sum += this.tenThousandYen * TEN_THOUSAND_YEN;
 		return sum;
 	}
+	
+	
 
 	public void clear() {
 		this.oneYen = 0;
