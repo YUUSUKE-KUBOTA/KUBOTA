@@ -87,15 +87,15 @@ public class Races {
 	}
 
 	public void bestRacerInfoOfRace(Map<Integer, Map<Integer, RacerInfo>> raceResultMap) {
-		List<RacerInfo> firstPlaceRacers = new ArrayList<>();
+		List<RacerInfo> firstRankList = new ArrayList<>();
 		for (Map<Integer, RacerInfo> innerMap : raceResultMap.values()) {
 			for (RacerInfo racerInfo : innerMap.values()) {
 				if (racerInfo.getRank() == 1) {
-					firstPlaceRacers.add(racerInfo);
+					firstRankList.add(racerInfo);
 				}
 			}
 		}
-		for (RacerInfo racerInfo : firstPlaceRacers) {
+		for (RacerInfo racerInfo : firstRankList) {
 			System.out.println(racerInfo.getName() + racerInfo.getRank() + racerInfo.getNumber());
 		}
 	}
