@@ -8,10 +8,13 @@ import java.util.Map;
 public class VendingMachines {
 
 	private Moneys haveMoney;
-	Map<Drink, Integer> kindCount = new HashMap<>();
+	private Map<Drink, Integer> kindCount = new HashMap<>();
 	private Moneys putMoney;
 
 	public static void main(String[] args) {
+		//どの飲み物がどのくらいの数はいってるか
+		
+		
 		//定義
 		VendingMachines vendingMachine = new VendingMachines();
 		List<Drink> canBuyDrinkList = new ArrayList<>(); 
@@ -21,7 +24,7 @@ public class VendingMachines {
 		
 		//ドリンクのリストをインプット
 		List<Drink> drinkList = new ArrayList<>(); 
-		drinkList = vendingMachine.DrinkList();
+		drinkList = DrinkList();
 		
 		//個数をもたせる
 		for (Drink drink : drinkList) {
@@ -29,8 +32,8 @@ public class VendingMachines {
 		}
 		
 		//お金たちをインプット
-		vendingMachine.haveMoney = vendingMachine.HaveMoney();
-		vendingMachine.putMoney = vendingMachine.PutMoney();
+		vendingMachine.haveMoney = HaveMoney();
+		vendingMachine.putMoney = PutMoney();
 		
 		//入れたお金で買えるドリンクのリストを表示させる。
 		canBuyDrinkList = vendingMachine.insertMoneys(vendingMachine.putMoney);
@@ -116,8 +119,10 @@ public class VendingMachines {
 
 	public List<Drink> insertMoneys(Moneys putMoney) {
 		List<Drink> canBuyDrinkList = new ArrayList<>();
-		VendingMachines vendingMachine = new VendingMachines();
-		for (Drink drink : vendingMachine.DrinkList()) {
+		for (Drink drink : DrinkList()) {
+			if (0) {
+				
+			}
 			if (drink.getPraice() < putMoney.getTotalMoney()) {
 				canBuyDrinkList.add(drink);
 			}
@@ -126,8 +131,7 @@ public class VendingMachines {
 	}
 
 	public int calcChange(Drink buyDrink) {
-		VendingMachines vendingMachine = new VendingMachines();
-		int putMoneyTotal = vendingMachine.PutMoney().getTotalMoney();
+		int putMoneyTotal = PutMoney().getTotalMoney();
 		return putMoneyTotal - buyDrink.getPraice();
 	}
 	
@@ -198,13 +202,17 @@ public class VendingMachines {
 		
 		//ドリンクダウンロード
 		List<Drink> drinkList = new ArrayList<>(); 
-		drinkList = vendingMachine.DrinkList();
+		drinkList = DrinkList();
 		//買えるドリンク
 		List<Drink> canBuyDrinkList = vendingMachine.insertMoneys(money);
 		//どのドリンク買うか
 		Drink buyDrink = canBuyDrinkList.get(0);
-		
+		//おつり計算してるけど自販機の中に入ってる数の計算してない
 		int change = vendingMachine.calcChange(buyDrink);
+		
+		
+		
+		
 		int last = vendingMachine.kindCount.get(drinkList.get(0));
 		vendingMachine.kindCount.remove(drinkList.get(0));
 		vendingMachine.kindCount.put(buyDrink, last - 1);
