@@ -49,40 +49,51 @@ public class VendingMachines {
 		vendingMachine.haveMoney.addOneHundredYen(vendingMachine.putMoney.getOneHundredYen());
 		vendingMachine.haveMoney.addFiveHundredYen(vendingMachine.putMoney.getFiveHundredYen());
 		vendingMachine.haveMoney.addOneThousandYen(vendingMachine.putMoney.getOneThousandYen());
+		vendingMachine.haveMoney.addTwoThousandYen(vendingMachine.putMoney.getTwoThousandYen());
 		vendingMachine.haveMoney.addFiveThousandYen(vendingMachine.putMoney.getFiveThousandYen());
 		vendingMachine.haveMoney.addTenThousandYen(vendingMachine.putMoney.getTenThousandYen());
-
 		
-		//入れたお金の種類
-		Moneys a = vendingMachine.getChange(change);
+		//入れたお金の種類おつりがかえってくる
+		Moneys money = vendingMachine.getChange(change);
 		vendingMachine.putMoney.clear();
 		
-		
+		vendingMachine.haveMoney.addOneYen(vendingMachine.putMoney.getOneYen() - money.getOneYen());
+		vendingMachine.haveMoney.addFiveYen(vendingMachine.putMoney.getFiveYen() - money.getFiveYen());
+		vendingMachine.haveMoney.addTenYen(vendingMachine.putMoney.getTenYen() - money.getTenYen());
+		vendingMachine.haveMoney.addFiftyYen(vendingMachine.putMoney.getFiftyYen() - money.getFiftyYen());
+		vendingMachine.haveMoney.addOneHundredYen(vendingMachine.putMoney.getOneHundredYen() - money.getOneHundredYen());
+		vendingMachine.haveMoney.addFiveHundredYen(vendingMachine.putMoney.getFiveHundredYen() - money.getFiveHundredYen());
+		vendingMachine.haveMoney.addOneThousandYen(vendingMachine.putMoney.getOneThousandYen() - money.getOneThousandYen());
+		vendingMachine.haveMoney.addTwoThousandYen(vendingMachine.putMoney.getTwoThousandYen() - money.getTwoThousandYen());
+		vendingMachine.haveMoney.addFiveThousandYen(vendingMachine.putMoney.getFiveThousandYen() - money.getFiveThousandYen());
+		vendingMachine.haveMoney.addTenThousandYen(vendingMachine.putMoney.getTenThousandYen() - money.getTenThousandYen());
 	}
 	
 	public Moneys PutMoney() {
 		Moneys putMoney = new Moneys();
-		putMoney.setOneYen(1);
-		putMoney.setFiveYen(1);
-		putMoney.setTenYen(1);
-		putMoney.setFiftyYen(1);
-		putMoney.setOneHundredYen(1);
-		putMoney.setFiveHundredYen(1);
+		putMoney.setOneYen(0);
+		putMoney.setFiveYen(0);
+		putMoney.setTenYen(0);
+		putMoney.setFiftyYen(4);
+		putMoney.setOneHundredYen(0);
+		putMoney.setFiveHundredYen(0);
 		putMoney.setOneThousandYen(1);
-		putMoney.setFiveThousandYen(1);
-		putMoney.setTenThousandYen(1);
+		putMoney.setTwoThousandYen(0);
+		putMoney.setFiveThousandYen(0);
+		putMoney.setTenThousandYen(0);
 		return putMoney;
 	}
 	
 	public Moneys HaveMoney() {
 		Moneys haveMoney = new Moneys();
-		haveMoney.setOneYen(1);
-		haveMoney.setFiveYen(1);
-		haveMoney.setTenYen(1);
-		haveMoney.setFiftyYen(1);
-		haveMoney.setOneHundredYen(1);
-		haveMoney.setFiveHundredYen(1);
-		haveMoney.setOneThousandYen(1);
+		haveMoney.setOneYen(10);
+		haveMoney.setFiveYen(10);
+		haveMoney.setTenYen(10);
+		haveMoney.setFiftyYen(10);
+		haveMoney.setOneHundredYen(10);
+		haveMoney.setFiveHundredYen(10);
+		haveMoney.setOneThousandYen(10);
+		haveMoney.setTwoThousandYen(10);
 		haveMoney.setFiveThousandYen(1);
 		haveMoney.setTenThousandYen(1);
 		return haveMoney;
@@ -119,14 +130,52 @@ public class VendingMachines {
 	}
 	
 	public Moneys getChange(int change) {
-		
-		if (change % 10000 > 1) {
-			
+		Moneys money = new Moneys();
+		int i = 0;
+		while(change % 5000 >= 0) {
+			i++;
 		}
-		
-		Moneys a;
-		
-		
-		return a;
+		money.setFiveThousandYen(i);
+		i = 0;
+		while(change % 2000 >= 0) {
+			i++;
+		}
+		money.setTwoThousandYen(i);
+		i = 0;
+		while(change % 1000 >= 0) {
+			i++;
+		}
+		money.setOneThousandYen(i);
+		i = 0;
+		while(change % 500 >= 0) {
+			i++;
+		}
+		money.setFiveHundredYen(i);
+		i = 0;
+		while(change % 100 >= 0) {
+			i++;
+		}
+		money.setOneHundredYen(i);
+		i = 0;
+		while(change % 50 >= 0) {
+			i++;
+		}
+		money.setFiftyYen(i);
+		i = 0;
+		while(change % 10 >= 0) {
+			i++;
+		}
+		money.setTenYen(i);
+		i = 0;
+		while(change % 5 >= 0) {
+			i++;
+		}
+		money.setFiveYen(i);
+		i = 0;
+		while(change % 1 >= 0) {
+			i++;
+		}
+		money.setOneYen(i);
+		return money;
 	}
 }

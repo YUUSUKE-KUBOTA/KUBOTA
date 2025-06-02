@@ -3,12 +3,12 @@ package jp.co.scsk.kyushu.exBasic;
 public class Drink {
 	private String productName;
 	private int quantity;
-	private int praice;
+	private int price;
 
-	Drink(String productName, int quantity, int praice) {
+	Drink(String productName, int quantity, int price) {
 		this.productName = productName;
 		this.quantity = quantity;
-		this.praice = praice;
+		this.price = price;
 	}
 
 	public String getProductName() {
@@ -16,6 +16,6 @@ public class Drink {
 	}
 
 	public int getPraice() {
-		return praice;
+		return price;
 	}
 }
