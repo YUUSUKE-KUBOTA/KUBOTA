@@ -15,7 +15,7 @@ public class Drink {
 		return productName;
 	}
 
-	public int getPraice() {
+	public int getPrice() {
 		return price;
 	}
 }

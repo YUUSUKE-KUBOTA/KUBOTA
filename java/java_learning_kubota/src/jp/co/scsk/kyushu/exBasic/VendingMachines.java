@@ -53,19 +53,10 @@ public class VendingMachines {
 		vendingMachine.haveMoney.addTenThousandYen(vendingMachine.putMoney.getTenThousandYen() - money.getTenThousandYen());
 		vendingMachine.putMoney.clear();
 		
+		Drink buyDrink = drinkList.get(0);
+		Integer num = vendingMachine.kindCount.get(drinkList.get(0));
 		vendingMachine.kindCount.remove(drinkList.get(0));
-//		vendingMachine.kindCount.put(drink, last - 1);
-		
-		vendingMachine.haveMoney.addOneYen(vendingMachine.putMoney.getOneYen());
-		vendingMachine.haveMoney.addFiveYen(vendingMachine.putMoney.getFiveYen());
-		vendingMachine.haveMoney.addTenYen(vendingMachine.putMoney.getTenYen());
-		vendingMachine.haveMoney.addFiftyYen(vendingMachine.putMoney.getFiftyYen());
-		vendingMachine.haveMoney.addOneHundredYen(vendingMachine.putMoney.getOneHundredYen());
-		vendingMachine.haveMoney.addFiveHundredYen(vendingMachine.putMoney.getFiveHundredYen());
-		vendingMachine.haveMoney.addOneThousandYen(vendingMachine.putMoney.getOneThousandYen());
-		vendingMachine.haveMoney.addTwoThousandYen(vendingMachine.putMoney.getTwoThousandYen());
-		vendingMachine.haveMoney.addFiveThousandYen(vendingMachine.putMoney.getFiveThousandYen());
-		vendingMachine.haveMoney.addTenThousandYen(vendingMachine.putMoney.getTenThousandYen());
+		vendingMachine.kindCount.put(buyDrink, num - 1);
 		
 		System.out.println(change);
 	}
@@ -77,7 +68,7 @@ public class VendingMachines {
 		putMoney.setFiveYen(0);
 		putMoney.setTenYen(0);
 		putMoney.setFiftyYen(4);
-		putMoney.setOneHundredYen(0);
+		putMoney.setOneHundredYen(3);
 		putMoney.setFiveHundredYen(0);
 		putMoney.setOneThousandYen(1);
 		putMoney.setTwoThousandYen(0);
@@ -85,6 +76,21 @@ public class VendingMachines {
 		putMoney.setTenThousandYen(0);
 		return putMoney;
 	}
+	
+//	public static Moneys HaveMoney(Moneys haveMoney) {
+//		int oneYen = haveMoney.getOneYen();
+//		haveMoney.setOneYen(oneYen - 1);
+//		putMoney.setFiveYen(0);
+//		putMoney.setTenYen(0);
+//		putMoney.setFiftyYen(4);
+//		putMoney.setOneHundredYen(3);
+//		putMoney.setFiveHundredYen(0);
+//		putMoney.setOneThousandYen(1);
+//		putMoney.setTwoThousandYen(0);
+//		putMoney.setFiveThousandYen(0);
+//		putMoney.setTenThousandYen(0);
+//		return putMoney;
+//	}
 	
 	public static List<Drink> DrinkList(){
 		List<Drink> drinkList = new ArrayList<>();
@@ -100,22 +106,23 @@ public class VendingMachines {
 	}
 
 	public List<Drink> insertMoneys(Moneys putMoney) {
-		List<Drink> canBuyDrinkList = new ArrayList<>();
-		Moneys haveMoney = PutMoney();
-		for (Drink drink : DrinkList()) {
-			if ((!(haveMoney.getTenYen() > 4)) && (!(haveMoney.getOneHundredYen() > 4))) {
-				break;
-			}
-			if (drink.getPraice() < putMoney.getTotalMoney()) {
-				canBuyDrinkList.add(drink);
-			}
-		}
-		return canBuyDrinkList;
+		VendingMachines vendingMachine = new VendingMachines();
+	    List<Drink> canBuyDrinkList = new ArrayList<>();
+	    
+	    if(putMoney.addOneYen(0)) {
+	    	
+	    }
+	    
+	    
+	    if (canBuyDrinkList.isEmpty()) {
+	        System.out.println("購入可能な飲み物がありません。");
+	    }
+	    return canBuyDrinkList;
 	}
 
 	public int calcChange(Drink buyDrink) {
 		int putMoneyTotal = PutMoney().getTotalMoney();
-		return putMoneyTotal - buyDrink.getPraice();
+		return putMoneyTotal - buyDrink.getPrice();
 	}
 	
 	public Moneys getChange(int change) {

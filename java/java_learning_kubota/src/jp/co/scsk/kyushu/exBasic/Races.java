@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.TreeSet;
 
 public class Races {
@@ -36,7 +34,7 @@ public class Races {
 		RacerInfo racerInfo4 = new RacerInfo();
 		racerInfo4.setName("P");
 		racerInfo4.setNumber(1);
-		racerInfo4.setRank(2);
+		racerInfo4.setRank(4);
 		racerInfo4.setTime(7.30);
 		racerInfoArray.add(racerInfo4);
 		RacerInfo racerInfo5 = new RacerInfo();
@@ -47,20 +45,20 @@ public class Races {
 		racerInfoArray.add(racerInfo5);
 		raceResultMap = createRaceResult(racerInfoArray);
 		Races races = new Races();
-		races.sortRaceResult(raceResultMap, 1);
-		races.bestRacerInfoOfRace(raceResultMap);
-		races.bestRacerInfoOfAll(raceResultMap);
-		races.worstRacerInfoOfAll(raceResultMap);
+//		races.sortRaceResult(raceResultMap, 1);
+//		races.bestRacerInfoOfRace(raceResultMap);
+//		races.bestRacerInfoOfAll(raceResultMap);
+//		races.worstRacerInfoOfAll(raceResultMap);
 		races.winnerRacerInfo(raceResultMap);
-		races.top10RacerInfo(raceResultMap);
-		for (int raceOrder : raceResultMap.keySet()) {
-			System.out.println("レース順: " + raceOrder);
-			Map<Integer, RacerInfo> rankMap = raceResultMap.get(raceOrder);
-			for (int rank : rankMap.keySet()) {
-				RacerInfo racerInfo = rankMap.get(rank);
-				System.out.println("  順位: " + rank + ", 走者名: " + racerInfo.getName() + ", タイム: " + racerInfo.getTime());
-			}
-		}
+//		races.top10RacerInfo(raceResultMap);
+//		for (int raceOrder : raceResultMap.keySet()) {
+//			System.out.println("レース順: " + raceOrder);
+//			Map<Integer, RacerInfo> rankMap = raceResultMap.get(raceOrder);
+//			for (int rank : rankMap.keySet()) {
+//				RacerInfo racerInfo = rankMap.get(rank);
+//				System.out.println("  順位: " + rank + ", 走者名: " + racerInfo.getName() + ", タイム: " + racerInfo.getTime());
+//			}
+//		}
 	}
 
 	public static Map<Integer, Map<Integer, RacerInfo>> createRaceResult(ArrayList<RacerInfo> racerInfoArray) {
@@ -126,23 +124,38 @@ public class Races {
 	}
 
 	public void winnerRacerInfo(Map<Integer, Map<Integer, RacerInfo>> raceResultMap) {
-		Set<Map.Entry<Integer, Map<Integer, RacerInfo>>> racerInfoSet = new HashSet<>();
-		for (Map.Entry<Integer, Map<Integer, RacerInfo>> outEntry : raceResultMap.entrySet()) {
-			Map<Integer, RacerInfo> raceResults = outEntry.getValue();
-			for (Map.Entry<Integer, RacerInfo> innerEntry : raceResults.entrySet()) {
-				Integer rank = innerEntry.getKey();
-				if (rank <= 2) {
-					racerInfoSet.add(outEntry);
-				}
+		List<RacerInfo> racerInfoList = new ArrayList<>();
+		for(Map<Integer, RacerInfo> racerInfoMap : raceResultMap.values()) {
+			if(racerInfoMap.containsKey(1)) {
+				racerInfoList.add(racerInfoMap.get(1));
+			}
+			if(racerInfoMap.containsKey(2)) {
+				racerInfoList.add(racerInfoMap.get(2));
 			}
 		}
-		for (Map.Entry<Integer, Map<Integer, RacerInfo>> printMap : racerInfoSet) {
-			Map<Integer, RacerInfo> raceResults = printMap.getValue();
-			for (RacerInfo raceResult : raceResults.values()) {
-				System.out.println(raceResult.getName());
-			}
+		for(RacerInfo racerInfo : racerInfoList) {
+			System.out.println(racerInfo.getName() + racerInfo.getRank() + racerInfo.getNumber());
 		}
-	}
+	}	
+		
+		
+//		Set<Map.Entry<Integer, Map<Integer, RacerInfo>>> racerInfoSet = new HashSet<>();
+//		for (Map.Entry<Integer, Map<Integer, RacerInfo>> outEntry : raceResultMap.entrySet()) {
+//			Map<Integer, RacerInfo> raceResults = outEntry.getValue();
+//			for (Map.Entry<Integer, RacerInfo> innerEntry : raceResults.entrySet()) {
+//				Integer rank = innerEntry.getKey();
+//				if (rank <= 2) {
+//					racerInfoSet.add(outEntry);
+//				}
+//			}
+//		}
+//		for (Map.Entry<Integer, Map<Integer, RacerInfo>> printMap : racerInfoSet) {
+//			Map<Integer, RacerInfo> raceResults = printMap.getValue();
+//			for (RacerInfo raceResult : raceResults.values()) {
+//				System.out.println(raceResult.getName());
+//			}
+//		}
+	
 
 	public void top10RacerInfo(Map<Integer, Map<Integer, RacerInfo>> raceResultMap) {
 		TreeSet<Map.Entry<Integer, RacerInfo>> racerInfoSet = new TreeSet<>(
