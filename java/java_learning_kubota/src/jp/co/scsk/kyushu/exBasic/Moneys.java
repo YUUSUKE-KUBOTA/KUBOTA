@@ -218,11 +218,15 @@ public class Moneys {
 
 	public boolean addFiveThousandYen(int num) {
 		boolean answer = true;
-		for (int i = 0; i < num; i++) {
-			this.fiveThousandYen++;
+		if(num > 0) {
+			for (int i = 0; i <= num; i++) {
+				this.fiveThousandYen++;
+			}
 		}
-		for (int i = 0; i > num; i++) {
-			this.fiveThousandYen--;
+		if(num < 0) {
+			for (int i = 0; i >= num; i--) {
+				this.fiveThousandYen--;
+			}
 		}
 		if (this.fiveThousandYen < 0) {
 			answer = false;
