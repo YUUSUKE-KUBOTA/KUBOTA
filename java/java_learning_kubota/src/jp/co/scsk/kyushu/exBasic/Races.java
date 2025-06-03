@@ -6,7 +6,6 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeSet;
 
 public class Races {
 
@@ -45,20 +44,20 @@ public class Races {
 		racerInfoArray.add(racerInfo5);
 		raceResultMap = createRaceResult(racerInfoArray);
 		Races races = new Races();
-//		races.sortRaceResult(raceResultMap, 1);
-//		races.bestRacerInfoOfRace(raceResultMap);
-//		races.bestRacerInfoOfAll(raceResultMap);
-//		races.worstRacerInfoOfAll(raceResultMap);
-		races.winnerRacerInfo(raceResultMap);
-//		races.top10RacerInfo(raceResultMap);
-//		for (int raceOrder : raceResultMap.keySet()) {
-//			System.out.println("レース順: " + raceOrder);
-//			Map<Integer, RacerInfo> rankMap = raceResultMap.get(raceOrder);
-//			for (int rank : rankMap.keySet()) {
-//				RacerInfo racerInfo = rankMap.get(rank);
-//				System.out.println("  順位: " + rank + ", 走者名: " + racerInfo.getName() + ", タイム: " + racerInfo.getTime());
-//			}
-//		}
+		//		races.sortRaceResult(raceResultMap, 1);
+		//		races.bestRacerInfoOfRace(raceResultMap);
+		//		races.bestRacerInfoOfAll(raceResultMap);
+		//		races.worstRacerInfoOfAll(raceResultMap);
+		///races.winnerRacerInfo(raceResultMap);
+		races.top10RacerInfo(raceResultMap);
+		//		for (int raceOrder : raceResultMap.keySet()) {
+		//			System.out.println("レース順: " + raceOrder);
+		//			Map<Integer, RacerInfo> rankMap = raceResultMap.get(raceOrder);
+		//			for (int rank : rankMap.keySet()) {
+		//				RacerInfo racerInfo = rankMap.get(rank);
+		//				System.out.println("  順位: " + rank + ", 走者名: " + racerInfo.getName() + ", タイム: " + racerInfo.getTime());
+		//			}
+		//		}
 	}
 
 	public static Map<Integer, Map<Integer, RacerInfo>> createRaceResult(ArrayList<RacerInfo> racerInfoArray) {
@@ -125,63 +124,37 @@ public class Races {
 
 	public void winnerRacerInfo(Map<Integer, Map<Integer, RacerInfo>> raceResultMap) {
 		List<RacerInfo> racerInfoList = new ArrayList<>();
-		for(Map<Integer, RacerInfo> racerInfoMap : raceResultMap.values()) {
-			if(racerInfoMap.containsKey(1)) {
+		for (Map<Integer, RacerInfo> racerInfoMap : raceResultMap.values()) {
+			if (racerInfoMap.containsKey(1)) {
 				racerInfoList.add(racerInfoMap.get(1));
 			}
-			if(racerInfoMap.containsKey(2)) {
+			if (racerInfoMap.containsKey(2)) {
 				racerInfoList.add(racerInfoMap.get(2));
 			}
 		}
-		for(RacerInfo racerInfo : racerInfoList) {
+		for (RacerInfo racerInfo : racerInfoList) {
 			System.out.println(racerInfo.getName() + racerInfo.getRank() + racerInfo.getNumber());
 		}
-	}	
-		
-		
-//		Set<Map.Entry<Integer, Map<Integer, RacerInfo>>> racerInfoSet = new HashSet<>();
-//		for (Map.Entry<Integer, Map<Integer, RacerInfo>> outEntry : raceResultMap.entrySet()) {
-//			Map<Integer, RacerInfo> raceResults = outEntry.getValue();
-//			for (Map.Entry<Integer, RacerInfo> innerEntry : raceResults.entrySet()) {
-//				Integer rank = innerEntry.getKey();
-//				if (rank <= 2) {
-//					racerInfoSet.add(outEntry);
-//				}
-//			}
-//		}
-//		for (Map.Entry<Integer, Map<Integer, RacerInfo>> printMap : racerInfoSet) {
-//			Map<Integer, RacerInfo> raceResults = printMap.getValue();
-//			for (RacerInfo raceResult : raceResults.values()) {
-//				System.out.println(raceResult.getName());
-//			}
-//		}
-	
+	}
 
 	public void top10RacerInfo(Map<Integer, Map<Integer, RacerInfo>> raceResultMap) {
-		TreeSet<Map.Entry<Integer, RacerInfo>> racerInfoSet = new TreeSet<>(
-				new Comparator<Map.Entry<Integer, RacerInfo>>() {
-					@Override
-					public int compare(Map.Entry<Integer, RacerInfo> e1, Map.Entry<Integer, RacerInfo> e2) {
-						return Double.compare(e1.getValue().getTime(), e2.getValue().getTime());
-					}
-				});
-		for (Map.Entry<Integer, Map<Integer, RacerInfo>> outEntry : raceResultMap.entrySet()) {
-			Map<Integer, RacerInfo> raceResults = outEntry.getValue();
-			for (Map.Entry<Integer, RacerInfo> innerEntry : raceResults.entrySet()) {
-				if (!racerInfoSet.isEmpty() && racerInfoSet.size() >= 10) {
-					if (racerInfoSet.last().getValue().getTime() < innerEntry.getValue().getTime()) {
-						racerInfoSet.pollLast();
-						racerInfoSet.add(innerEntry);
-					}
-				} else {
-					racerInfoSet.add(innerEntry);
-				}
+		List<RacerInfo> racerInfoList = new ArrayList<>();
+		Map<Integer, RacerInfo> racerInfoMapTotal = new HashMap<>();
+		for (Map<Integer, RacerInfo> racerInfoMap : raceResultMap.values()) {
+			racerInfoList.addAll(racerInfoMap.values());
+		}
+		for (RacerInfo racerInfo : racerInfoMapTotal.values()) {
+			racerInfoList.sort(Comparator.comparingDouble(RacerInfo::getTime));
+			if (racerInfoList.getLast().getTime() > racerInfo.getTime()) {
+				racerInfoList.remove(racerInfoList.getLast());
+				racerInfoList.add(racerInfo);
 			}
 		}
-		for (Map.Entry<Integer, RacerInfo> printMap : racerInfoSet) {
-			System.out.println(printMap.getValue().getName());
-			System.out.println(printMap.getValue().getTime());
-			System.out.println(printMap.getValue().getNumber());
+		racerInfoList.sort(Comparator.comparingDouble(RacerInfo::getTime));
+		int i = 0;
+		for (RacerInfo racerInfo : racerInfoList) {
+			i++;
+			System.out.println(i + "番目に足が速い人" + racerInfo.getName() + "タイムは" + racerInfo.getTime());
 		}
 	}
 }
