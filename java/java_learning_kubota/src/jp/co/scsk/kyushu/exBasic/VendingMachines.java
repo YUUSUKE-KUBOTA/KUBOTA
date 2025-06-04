@@ -41,24 +41,26 @@ public class VendingMachines {
 		VendingMachines vendingMachine = new VendingMachines(haveMoney, kindCount, putMoney);
 
 		Moneys change = vendingMachine.boughtDrink(putMoney);
-		
 
 		vendingMachine.putMoney.clear();
 
-		Drink buyDrink = drinkList.get(0);
-		Integer num = vendingMachine.kindCount.get(drinkList.get(0));
+		//買う飲み物選択
+		int buy = 3;
+
+		Drink buyDrink = drinkList.get(buy);
+		Integer num = vendingMachine.kindCount.get(drinkList.get(buy));
 		vendingMachine.kindCount.remove(drinkList.get(0));
 		vendingMachine.kindCount.put(buyDrink, num - 1);
 
-		System.out.println(change);
+		System.out.println(change.getTotalMoney());
 	}
 
 	public static Moneys PutMoney() {
 		Moneys putMoney = new Moneys();
 		putMoney.setOneYen(0);
 		putMoney.setFiveYen(0);
-		putMoney.setTenYen(0);
-		putMoney.setFiftyYen(4);
+		putMoney.setTenYen(3);
+		putMoney.setFiftyYen(1);
 		putMoney.setOneHundredYen(3);
 		putMoney.setFiveHundredYen(0);
 		putMoney.setOneThousandYen(1);
@@ -81,25 +83,37 @@ public class VendingMachines {
 		return drinkList;
 	}
 
+	public Moneys boughtDrink(Moneys money) {
+
+		List<Drink> canBuyDrinkList = insertMoneys(money);
+		if (canBuyDrinkList.isEmpty()) {
+			System.out.println("購入可能な飲み物がありません。");
+			return money;
+		}
+
+		Drink buyDrink = canBuyDrinkList.get(1);
+
+		int change = calcChange(buyDrink);
+
+		Moneys changes = getChange(change);
+		System.out.println(buyDrink.getProductName());
+
+		return changes;
+	}
+
 	public List<Drink> insertMoneys(Moneys putMoney) {
 		List<Drink> canBuyDrinkList = new ArrayList<>();
-		
-		System.out.println("a");
-		
+
 		for (Drink drink : kindCount.keySet()) {
-			
-			System.out.println("a");
-			
+			//毎回リセット
+			Moneys money = putMoney;
+			//後で追加したままか消すか決める
 			canBuyDrinkList.add(drink);
-			
-			System.out.println("a");
-			int changeValue = putMoney.getTotalMoney() - drink.getPrice();
-			System.out.println(changeValue);
+			//差額計算
+			int changeValue = money.getTotalMoney() - drink.getPrice();
+			//差額はいくら必要か計算
 			Moneys changeCount = getChange(changeValue);
-			System.out.println(changeCount.getOneHundredYen());
-			
-			System.out.println("a");
-			
+			//それぞれの枚数あるかどうか計算
 			if (haveMoney.getFiveThousandYen() - changeCount.getFiveThousandYen() > 0) {
 				haveMoney.setFiveThousandYen(haveMoney.getFiveThousandYen() - changeCount.getFiveThousandYen());
 			} else if (haveMoney.getFiveThousandYen() - changeCount.getFiveThousandYen() < 0) {
@@ -159,83 +173,53 @@ public class VendingMachines {
 	public Moneys getChange(int change) {
 		Moneys money = new Moneys();
 		int i = 0;
-		while (change % 5000 <= 0) {
+		while ((change - 5000) >= 0) {
 			change -= 5000;
 			i++;
 		}
-		money.setTwoThousandYen(i);
+		money.setFiveThousandYen(i);
 		i = 0;
-		while (change / 1000 <= 0) {
+		while ((change - 1000) >= 0) {
 			change -= 1000;
 			i++;
 		}
 		money.setOneThousandYen(i);
 		i = 0;
-		while (change / 500 <= 0) {
+		while ((change - 500) >= 0) {
 			change -= 500;
 			i++;
 		}
 		money.setFiveHundredYen(i);
 		i = 0;
-		while (change / 100 <= 0) {
+		while ((change - 100) >= 0) {
 			change -= 100;
 			i++;
 		}
 		money.setOneHundredYen(i);
 		i = 0;
-		while (change / 50 <= 0) {
+		while ((change - 50) >= 0) {
 			change -= 50;
 			i++;
 		}
 		money.setFiftyYen(i);
 		i = 0;
-		while (change / 10 <= 0) {
+		while ((change - 10) >= 0) {
 			change -= 10;
 			i++;
 		}
 		money.setTenYen(i);
 		i = 0;
-		while (change % 5 <= 0) {
+		while ((change - 5) >= 0) {
 			change -= 5;
 			i++;
 		}
 		money.setFiveYen(i);
 		i = 0;
-		while (change % 1 <= 0) {
+		while ((change - 1) >= 0) {
 			change -= 1;
 			i++;
 		}
 		money.setOneYen(i);
 		return money;
-	}
-
-	public Moneys boughtDrink(Moneys money) {
-		
-		
-		
-		List<Drink> canBuyDrinkList = insertMoneys(money);
-		if (canBuyDrinkList.isEmpty()) {
-			System.out.println("購入可能な飲み物がありません。");
-			return new Moneys(); 
-		}
-		
-		
-		System.out.println("a");
-
-		Drink buyDrink = canBuyDrinkList.get(0);
-		
-		System.out.println("a");
-		
-		int change = calcChange(buyDrink);
-		
-		System.out.println("a");
-		
-		Moneys changes = getChange(change);
-		
-		System.out.println("a");
-
-		System.out.println(buyDrink.getProductName());
-
-		return changes;
 	}
 }
