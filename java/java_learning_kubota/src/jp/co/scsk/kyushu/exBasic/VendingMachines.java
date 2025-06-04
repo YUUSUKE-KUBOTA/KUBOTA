@@ -37,6 +37,7 @@ public class VendingMachines {
 		}
 
 		Moneys putMoney = PutMoney();
+		System.out.println("入れた金額は" + putMoney.getTotalMoney() + "円");
 
 		VendingMachines vendingMachine = new VendingMachines(haveMoney, kindCount, putMoney);
 
@@ -44,15 +45,23 @@ public class VendingMachines {
 
 		vendingMachine.putMoney.clear();
 
-		//買う飲み物選択
-		int buy = 3;
+		System.out.println("おつりは" + change.getTotalMoney() + "円");
 
-		Drink buyDrink = drinkList.get(buy);
-		Integer num = vendingMachine.kindCount.get(drinkList.get(buy));
-		vendingMachine.kindCount.remove(drinkList.get(0));
-		vendingMachine.kindCount.put(buyDrink, num - 1);
+		for (Drink a : kindCount.keySet()) {
+			System.out.println(a.getProductName() + "の残りの本数" + kindCount.get(a) + "本");
+		}
+	}
 
-		System.out.println(change.getTotalMoney());
+	public int calcChange(Drink buyDrink) {
+		int putMoneyTotal = PutMoney().getTotalMoney();
+		for (Drink buy : kindCount.keySet()) {
+			if (buyDrink.getProductName() == buy.getProductName()) {
+				Integer beforeCount = kindCount.get(buy);
+				kindCount.put(buy, beforeCount - 1);
+			}
+		}
+
+		return putMoneyTotal - buyDrink.getPrice();
 	}
 
 	public static Moneys PutMoney() {
@@ -91,12 +100,13 @@ public class VendingMachines {
 			return money;
 		}
 
-		Drink buyDrink = canBuyDrinkList.get(1);
+		//買う飲み物はここで選択
+		Drink buyDrink = canBuyDrinkList.get(2);
 
 		int change = calcChange(buyDrink);
 
 		Moneys changes = getChange(change);
-		System.out.println(buyDrink.getProductName());
+		System.out.println("買った飲み物は" + buyDrink.getProductName());
 
 		return changes;
 	}
@@ -163,11 +173,6 @@ public class VendingMachines {
 			System.out.println("購入可能な飲み物がありません。");
 		}
 		return canBuyDrinkList;
-	}
-
-	public int calcChange(Drink buyDrink) {
-		int putMoneyTotal = PutMoney().getTotalMoney();
-		return putMoneyTotal - buyDrink.getPrice();
 	}
 
 	public Moneys getChange(int change) {
