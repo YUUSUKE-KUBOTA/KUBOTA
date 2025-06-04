@@ -11,6 +11,16 @@ public class VendingMachines {
 	private Map<Drink, Integer> kindCount;
 	private Moneys putMoney;
 
+	public final int ONE_YEN = 1;
+	public final int FIVE_YEN = 5;
+	public final int TEN_YEN = 10;
+	public final int FIFTY_YEN = 50;
+	public final int ONE_HUNDRED_YEN = 100;
+	public final int FIVE_HUNDRED_YEN = 500;
+	public final int ONE_THOUSAND_YEN = 1000;
+	public final int TWO_THOUSAND_YEN = 2000;
+	public final int FIVE_THOUSAND_YEN = 5000;
+
 	public VendingMachines(Moneys haveMoney, Map<Drink, Integer> kindCount, Moneys putMoney) {
 		this.haveMoney = haveMoney;
 		this.kindCount = kindCount;
@@ -176,37 +186,37 @@ public class VendingMachines {
 	public Moneys getChange(int change) {
 		Moneys money = new Moneys();
 		money.clear();
-		while ((change - 5000) >= 0) {
-			change -= 5000;
+		while ((change - FIVE_THOUSAND_YEN) >= 0) {
+			change -= FIVE_THOUSAND_YEN;
 			money.setFiveThousandYen(money.getFiveThousandYen() + 1);
 		}
-		while ((change - 1000) >= 0) {
-			change -= 1000;
+		while ((change - ONE_THOUSAND_YEN) >= 0) {
+			change -= ONE_THOUSAND_YEN;
 			money.setOneThousandYen(money.getOneThousandYen() + 1);
 		}
-		while ((change - 500) >= 0) {
-			change -= 500;
+		while ((change - FIVE_HUNDRED_YEN) >= 0) {
+			change -= FIVE_HUNDRED_YEN;
 			money.setFiveHundredYen(money.getFiveHundredYen() + 1);
 		}
-		while ((change - 100) >= 0) {
-			change -= 100;
+		while ((change - ONE_HUNDRED_YEN) >= 0) {
+			change -= ONE_HUNDRED_YEN;
 			money.setOneHundredYen(money.getOneHundredYen() + 1);
 		}
-		while ((change - 50) >= 0) {
-			change -= 50;
+		while ((change - FIFTY_YEN) >= 0) {
+			change -= FIFTY_YEN;
 			money.setFiftyYen(money.getFiftyYen() + 1);
 		}
-		while ((change - 10) >= 0) {
-			change -= 10;
+		while ((change - TEN_YEN) >= 0) {
+			change -= TEN_YEN;
 			money.setTenYen(money.getTenYen() + 1);
 		}
-		while ((change - 5) >= 0) {
-			change -= 5;
+		while ((change - FIVE_YEN) >= 0) {
+			change -= FIVE_YEN;
 			money.setFiveYen(money.getFiveYen() + 1);
 		}
 
-		while ((change - 1) >= 0) {
-			change -= 1;
+		while ((change - ONE_YEN) >= 0) {
+			change -= ONE_YEN;
 			money.setOneYen(money.getOneYen() + 1);
 		}
 		return money;
