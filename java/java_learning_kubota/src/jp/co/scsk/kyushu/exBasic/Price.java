@@ -31,17 +31,8 @@ public class Price {
 		return result;
 	}
 
-	public int praice2(int number, int praice) {
-		int result = 0;
-		int count = 1;
-		for (int i = 0; i <= number; i++) {
-			result += praice;
-			count++;
-			if (count == 5) {
-				count = 1;
-				result -= praice;
-			}
-		}
-		return result;
+	public int price2(int number, int price) {
+		int result = number - (number / 5);
+		return result * price;
 	}
 }
