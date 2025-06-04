@@ -83,11 +83,23 @@ public class VendingMachines {
 
 	public List<Drink> insertMoneys(Moneys putMoney) {
 		List<Drink> canBuyDrinkList = new ArrayList<>();
+		
+		System.out.println("a");
+		
 		for (Drink drink : kindCount.keySet()) {
+			
+			System.out.println("a");
+			
 			canBuyDrinkList.add(drink);
+			
+			System.out.println("a");
 			int changeValue = putMoney.getTotalMoney() - drink.getPrice();
+			System.out.println(changeValue);
 			Moneys changeCount = getChange(changeValue);
-
+			System.out.println(changeCount.getOneHundredYen());
+			
+			System.out.println("a");
+			
 			if (haveMoney.getFiveThousandYen() - changeCount.getFiveThousandYen() > 0) {
 				haveMoney.setFiveThousandYen(haveMoney.getFiveThousandYen() - changeCount.getFiveThousandYen());
 			} else if (haveMoney.getFiveThousandYen() - changeCount.getFiveThousandYen() < 0) {
@@ -147,49 +159,49 @@ public class VendingMachines {
 	public Moneys getChange(int change) {
 		Moneys money = new Moneys();
 		int i = 0;
-		while (change % 5000 >= 0) {
+		while (change % 5000 <= 0) {
 			change -= 5000;
 			i++;
 		}
 		money.setTwoThousandYen(i);
 		i = 0;
-		while (change / 1000 >= 0) {
+		while (change / 1000 <= 0) {
 			change -= 1000;
 			i++;
 		}
 		money.setOneThousandYen(i);
 		i = 0;
-		while (change / 500 >= 0) {
+		while (change / 500 <= 0) {
 			change -= 500;
 			i++;
 		}
 		money.setFiveHundredYen(i);
 		i = 0;
-		while (change / 100 >= 0) {
+		while (change / 100 <= 0) {
 			change -= 100;
 			i++;
 		}
 		money.setOneHundredYen(i);
 		i = 0;
-		while (change / 50 >= 0) {
+		while (change / 50 <= 0) {
 			change -= 50;
 			i++;
 		}
 		money.setFiftyYen(i);
 		i = 0;
-		while (change / 10 >= 0) {
+		while (change / 10 <= 0) {
 			change -= 10;
 			i++;
 		}
 		money.setTenYen(i);
 		i = 0;
-		while (change % 5 >= 0) {
+		while (change % 5 <= 0) {
 			change -= 5;
 			i++;
 		}
 		money.setFiveYen(i);
 		i = 0;
-		while (change % 1 >= 0) {
+		while (change % 1 <= 0) {
 			change -= 1;
 			i++;
 		}
@@ -199,13 +211,15 @@ public class VendingMachines {
 
 	public Moneys boughtDrink(Moneys money) {
 		
-		System.out.println("a");
+		
 		
 		List<Drink> canBuyDrinkList = insertMoneys(money);
 		if (canBuyDrinkList.isEmpty()) {
 			System.out.println("購入可能な飲み物がありません。");
 			return new Moneys(); 
 		}
+		
+		
 		System.out.println("a");
 
 		Drink buyDrink = canBuyDrinkList.get(0);
