@@ -115,12 +115,10 @@ public class VendingMachines {
 		List<Drink> canBuyDrinkList = new ArrayList<>();
 
 		for (Drink drink : kindCount.keySet()) {
-			//毎回リセット
-			Moneys money = putMoney;
 			//後で追加したままか消すか決める
 			canBuyDrinkList.add(drink);
 			//差額計算
-			int changeValue = money.getTotalMoney() - drink.getPrice();
+			int changeValue = putMoney.getTotalMoney() - drink.getPrice();
 			//差額はいくら必要か計算
 			Moneys changeCount = getChange(changeValue);
 			//それぞれの枚数あるかどうか計算
@@ -161,7 +159,7 @@ public class VendingMachines {
 
 			if (haveMoney.getTenYen() - changeCount.getTenYen() > 0) {
 				haveMoney.setTenYen(haveMoney.getTenYen() - changeCount.getTenYen());
-			} else if (haveMoney.getFiftyYen() - changeCount.getFiftyYen() < 0) {
+			} else if (haveMoney.getTenYen() - changeCount.getTenYen() < 0) {
 				canBuyDrinkList.remove(drink);
 			}
 
