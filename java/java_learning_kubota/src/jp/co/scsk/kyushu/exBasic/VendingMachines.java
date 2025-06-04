@@ -175,54 +175,40 @@ public class VendingMachines {
 
 	public Moneys getChange(int change) {
 		Moneys money = new Moneys();
-		int i = 0;
+		money.clear();
 		while ((change - 5000) >= 0) {
 			change -= 5000;
-			i++;
+			money.setFiveThousandYen(money.getFiveThousandYen() + 1);
 		}
-		money.setFiveThousandYen(i);
-		i = 0;
 		while ((change - 1000) >= 0) {
 			change -= 1000;
-			i++;
+			money.setOneThousandYen(money.getOneThousandYen() + 1);
 		}
-		money.setOneThousandYen(i);
-		i = 0;
 		while ((change - 500) >= 0) {
 			change -= 500;
-			i++;
+			money.setFiveHundredYen(money.getFiveHundredYen() + 1);
 		}
-		money.setFiveHundredYen(i);
-		i = 0;
 		while ((change - 100) >= 0) {
 			change -= 100;
-			i++;
+			money.setOneHundredYen(money.getOneHundredYen() + 1);
 		}
-		money.setOneHundredYen(i);
-		i = 0;
 		while ((change - 50) >= 0) {
 			change -= 50;
-			i++;
+			money.setFiftyYen(money.getFiftyYen() + 1);
 		}
-		money.setFiftyYen(i);
-		i = 0;
 		while ((change - 10) >= 0) {
 			change -= 10;
-			i++;
+			money.setTenYen(money.getTenYen() + 1);
 		}
-		money.setTenYen(i);
-		i = 0;
 		while ((change - 5) >= 0) {
 			change -= 5;
-			i++;
+			money.setFiveYen(money.getFiveYen() + 1);
 		}
-		money.setFiveYen(i);
-		i = 0;
+
 		while ((change - 1) >= 0) {
 			change -= 1;
-			i++;
+			money.setOneYen(money.getOneYen() + 1);
 		}
-		money.setOneYen(i);
 		return money;
 	}
 }
