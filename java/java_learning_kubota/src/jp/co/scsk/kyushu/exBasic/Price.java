@@ -1,35 +1,34 @@
 package jp.co.scsk.kyushu.exBasic;
 
 public class Price {
+	private final int FEE = 1000;
 
 	public int praice1(int age) {
-		int fee = 1000;
-		double discount;
-		if (age < 7) {
-			fee = 0;
-		} else if (age < 18) {
-			fee /= 2;
+		int result = 0;
+		double discount = 0;
+		if (age < 18) {
+			result = FEE / 2;
 			if ((age %= 4) == 0) {
-				discount = fee * 0.04;
-				fee -= (int) discount;
+				discount = FEE * 0.04;
+				result = (int) (FEE * discount);
 			}
 			if ((age %= 5) == 0) {
-				discount = fee * 0.05;
-				fee -= (int) discount;
+				discount = FEE * 0.05;
+				result = (int) (FEE * discount);
 			}
 		} else if (age >= 60) {
-			fee -= 300;
+			result = FEE - 300;
 		} else {
 			if ((age %= 4) == 0) {
-				discount = fee * 0.04;
-				fee -= (int) discount;
+				discount = FEE * 0.04;
+				result = (int) (FEE * discount);
 			}
 			if ((age %= 5) == 0) {
-				discount = fee * 0.05;
-				fee -= (int) discount;
+				discount = FEE * 0.05;
+				result = (int) (FEE * discount);
 			}
 		}
-		return fee;
+		return result;
 	}
 
 	public int praice2(int number, int praice) {
