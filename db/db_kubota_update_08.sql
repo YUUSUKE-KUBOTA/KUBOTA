@@ -3,8 +3,7 @@
 UPDATE
     nmrm_rent_car
 SET
-    etc = '1',
     car_navigation = '1'
 WHERE
         etc = '1'
-    AND car_navigation = '1'
+    AND car_navigation = '1';
