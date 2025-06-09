@@ -38,8 +38,8 @@ public class Test2 {
 		check(3);
 		System.out.println("ブラックボックステスト");
 		check(null);
-//		check("a");
-//		check(-1);
+		check("a");
+		check(-1);
 		check(0);
 		check(5);
 		check(6);
@@ -69,12 +69,12 @@ public class Test2 {
 
 		int age = ((int) ageObj);
 
-//		try {
-//			validateAge(age);
-//		} catch (Exception e) {
-//			System.out.println(e.getMessage());
-//			return;
-//		}
+		try {
+			validateAge(age);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return;
+		}
 
 		if (age >= 0) {
 			if (age >= 20) {
